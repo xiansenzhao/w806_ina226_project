@@ -1,0 +1,2002 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           CSKY
+  Version:                           0x1
+  Entry point address:               0x8010500
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          2514660 (bytes into file)
+  Flags:                             0x21006000
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         2
+  Size of section headers:           40 (bytes)
+  Number of section headers:         22
+  Section header string table index: 19
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .text             PROGBITS        08010400 000400 004de0 00  AX  0   0 1024
+  [ 2] .rodata           PROGBITS        080151e0 0051e0 00058c 00   A  0   0  4
+  [ 3] .vdata            PROGBITS        20000000 006400 000100 00      0   0 1024
+  [ 4] .data             PROGBITS        20000100 005900 00087c 00  WA  0   0  4
+  [ 5] .bss              NOBITS          2000097c 00617c 002994 00  WA  0   0  4
+  [ 6] ._user_heap       PROGBITS        20003310 006500 000000 00   W  0   0  1
+  [ 7] .comment          PROGBITS        00000000 006500 000042 01  MS  0   0  1
+  [ 8] .csky_stack_size  PROGBITS        00000000 006550 000b7c 00      0   0 16
+  [ 9] .csky.attributes  CSKY_ATTRIBUTES 00000000 0070cc 000038 00      0   0  1
+  [10] .debug_aranges    PROGBITS        00000000 007108 0008b8 00      0   0  8
+  [11] .debug_info       PROGBITS        00000000 0079c0 00b2c6 00      0   0  1
+  [12] .debug_abbrev     PROGBITS        00000000 012c86 0029e7 00      0   0  1
+  [13] .debug_line       PROGBITS        00000000 01566d 00716f 00      0   0  1
+  [14] .debug_frame      PROGBITS        00000000 01c7dc 0016d8 00      0   0  4
+  [15] .debug_str        PROGBITS        00000000 01deb4 002ce7 01  MS  0   0  1
+  [16] .debug_loc        PROGBITS        00000000 020b9b 006601 00      0   0  1
+  [17] .debug_macinfo    PROGBITS        00000000 02719c 23a7ba 00      0   0  1
+  [18] .debug_ranges     PROGBITS        00000000 261956 001130 00      0   0  1
+  [19] .shstrtab         STRTAB          00000000 265dfc 0000e7 00      0   0  1
+  [20] .symtab           SYMTAB          00000000 262a88 002560 10     21 405  4
+  [21] .strtab           STRTAB          00000000 264fe8 000e14 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  p (processor specific)
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x000400 0x08010400 0x08010400 0x0536c 0x0536c R E 0x400
+  LOAD           0x005900 0x20000100 0x0801576c 0x0087c 0x03210 RW  0x400
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text .rodata 
+   01     .data .bss 
+======================================================================
+Csky GNU Linker
+
+======================================================================
+
+Section Cross References
+
+	Obj/src_main.o(.text.OLED_Show) refers to Obj/src_main.o(.text.num2char) for num2char
+	Obj/src_main.o(.text.OLED_Show) refers to Obj/src_main.o(.text.time2string) for time2string
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_main.o(.text.Write_Flash) for Write_Flash
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_main.o(.text.Read_Flash) for Read_Flash
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_main.o(.text.OLED_Show) for OLED_Show
+	Obj/bsp_startup.o(.text) refers to Obj/src_main.o(.text.startup.main) for main
+	Obj/drivers_wm_tim.o(.text.HAL_TIM_IRQHandler) refers to Obj/drivers_wm_tim.o(.text.HAL_TIM_Callback) for HAL_TIM_Callback
+	Obj/drivers_wm_hal.o(.text.HAL_Init) refers to Obj/drivers_wm_hal.o(.text.HAL_MspInit) for HAL_MspInit
+	Obj/drivers_wm_tim.o(.text.HAL_TIM_Base_Init) refers to Obj/drivers_wm_tim.o(.text.HAL_TIM_Base_MspInit) for HAL_TIM_Base_MspInit
+	Obj/drivers_wm_adc.o(.text.HAL_ADC_Init) refers to Obj/drivers_wm_adc.o(.text.HAL_ADC_MspInit) for HAL_ADC_MspInit
+	Obj/src_adc.o(.text.ADC_Init) refers to Obj/src_adc.o(.text.Error_Handler_Adc) for Error_Handler_Adc
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_adc.o(.text.ADC_Init) for ADC_Init
+	Obj/drivers_wm_adc.o(.text.HAL_ADC_IRQHandler) refers to Obj/drivers_wm_adc.o(.text.HAL_ADC_ConvCpltCallback) for HAL_ADC_ConvCpltCallback
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_gpio.o(.text.GPIO_Init) for GPIO_Init
+	Obj/drivers_wm_gpio.o(.text.HAL_GPIO_EXTI_IRQHandler) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_EXTI_Callback) for HAL_GPIO_EXTI_Callback
+	Obj/src_timer.o(.text.TIM_Init_Us) refers to Obj/src_timer.o(.text.Error_Handler_Time) for Error_Handler_Time
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_timer.o(.text.TIM_Init_Us) for TIM_Init_Us
+	Obj/src_oled.o(.text.OLED_Init) refers to Obj/src_iic.o(.text.I2C_Init) for I2C_Init
+	Obj/src_ina226.o(.text.INA226_Init) refers to Obj/src_iic.o(.text.I2C_Init) for I2C_Init
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_oled.o(.text.OLED_Clear) for OLED_Clear
+	Obj/src_oled.o(.text.OLED_Init) refers to Obj/src_oled.o(.text.OLED_Clear) for OLED_Clear
+	Obj/src_oled.o(.text.OLED_ShowChar) refers to Obj/src_oled.o(.text.OLED_Set_Pos) for OLED_Set_Pos
+	Obj/src_oled.o(.text.OLED_ShowString) refers to Obj/src_oled.o(.text.OLED_ShowChar) for OLED_ShowChar
+	Obj/src_main.o(.text.OLED_Show) refers to Obj/src_oled.o(.text.OLED_ShowString) for OLED_ShowString
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_oled.o(.text.OLED_Init) for OLED_Init
+	Obj/src_ina226.o(.text.Get_Shunt_voltage) refers to Obj/src_ina226.o(.text.INA226_Read2Byte) for INA226_Read2Byte
+	Obj/src_ina226.o(.text.Get_Power) refers to Obj/src_ina226.o(.text.INA226_Read2Byte) for INA226_Read2Byte
+	Obj/src_ina226.o(.text.Get_INA226_All_Value) refers to Obj/src_ina226.o(.text.INA226_Read2Byte) for INA226_Read2Byte
+	Obj/src_ina226.o(.text.INA226_Init) refers to Obj/src_ina226.o(.text.INA226_Write2Byte) for INA226_Write2Byte
+	Obj/src_ina226.o(.text.Get_INA226_All_Value) refers to Obj/src_ina226.o(.text.Get_Shunt_voltage) for Get_Shunt_voltage
+	Obj/src_ina226.o(.text.Get_INA226_All_Value) refers to Obj/src_ina226.o(.text.Get_Power) for Get_Power
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_ina226.o(.text.Get_INA226_All_Value) for Get_INA226_All_Value
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_ina226.o(.text.INA226_Init) for INA226_Init
+	Obj/drivers_wm_adc.o(.text.HAL_ADC_Init) refers to Obj/drivers_wm_adc.o(.text.HAL_ADC_MspInit) for HAL_ADC_MspInit
+	Obj/src_adc.o(.text.ADC_Init) refers to Obj/drivers_wm_adc.o(.text.HAL_ADC_Init) for HAL_ADC_Init
+	Obj/drivers_wm_adc.o(.text.HAL_ADC_IRQHandler) refers to Obj/drivers_wm_adc.o(.text.HAL_ADC_ConvCpltCallback) for HAL_ADC_ConvCpltCallback
+	Obj/drivers_wm_adc.o(.text.HAL_ADC_IRQHandler) refers to Obj/drivers_wm_adc.o(.text.HAL_ADC_CompareCallback) for HAL_ADC_CompareCallback
+	Obj/drivers_wm_adc.o(.text.HAL_ADC_Init) refers to Obj/drivers_wm_cpu.o(.text.SystemClock_Get) for SystemClock_Get
+	Obj/drivers_wm_tim.o(.text.HAL_TIM_Base_Init) refers to Obj/drivers_wm_cpu.o(.text.SystemClock_Get) for SystemClock_Get
+	Obj/drivers_wm_cpu.o(.text.SystemClock_Config) refers to Obj/drivers_wm_cpu.o(.text.HAL_InitTick) for HAL_InitTick
+	Obj/src_main.o(.text.startup.main) refers to Obj/drivers_wm_cpu.o(.text.SystemClock_Config) for SystemClock_Config
+	Obj/drivers_wm_cpu.o(.text.HAL_Delay) refers to Obj/drivers_wm_cpu.o(.text.HAL_GetTick) for HAL_GetTick
+	Obj/src_main.o(.text.startup.main) refers to Obj/drivers_wm_cpu.o(.text.HAL_Delay) for HAL_Delay
+	Obj/src_oled.o(.text.OLED_Init) refers to Obj/drivers_wm_cpu.o(.text.HAL_Delay) for HAL_Delay
+	Obj/src_gpio.o(.text.GPIO_Init) refers to Obj/drivers_wm_cpu.o(.text.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
+	Obj/src_gpio.o(.text.GPIO_Init) refers to Obj/drivers_wm_cpu.o(.text.HAL_NVIC_EnableIRQ) for HAL_NVIC_EnableIRQ
+	Obj/src_gpio.o(.text.GPIO_Init) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_Init) for HAL_GPIO_Init
+	Obj/drivers_wm_i2c.o(.text.HAL_I2C_Init) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_Init) for HAL_GPIO_Init
+	Obj/drivers_wm_i2c.o(.text.I2C_Wait_Ack) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
+	Obj/drivers_wm_i2c.o(.text.HAL_I2C_Read) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
+	Obj/drivers_wm_i2c.o(.text.I2C_Start) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+	Obj/drivers_wm_i2c.o(.text.I2C_Write_Byte) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+	Obj/drivers_wm_i2c.o(.text.I2C_Stop) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+	Obj/drivers_wm_i2c.o(.text.I2C_Wait_Ack) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+	Obj/drivers_wm_i2c.o(.text.HAL_I2C_Init) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+	Obj/drivers_wm_i2c.o(.text.HAL_I2C_Read) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+	Obj/drivers_wm_gpio.o(.text.HAL_GPIO_EXTI_IRQHandler) refers to Obj/drivers_wm_gpio.o(.text.HAL_GPIO_EXTI_Callback) for HAL_GPIO_EXTI_Callback
+	Obj/drivers_wm_hal.o(.text.HAL_Init) refers to Obj/drivers_wm_hal.o(.text.HAL_MspInit) for HAL_MspInit
+	Obj/src_main.o(.text.startup.main) refers to Obj/drivers_wm_hal.o(.text.HAL_Init) for HAL_Init
+	Obj/src_iic.o(.text.I2C_Init) refers to Obj/drivers_wm_i2c.o(.text.HAL_I2C_Init) for HAL_I2C_Init
+	Obj/src_oled.o(.text.OLED_Clear) refers to Obj/drivers_wm_i2c.o(.text.HAL_I2C_Write) for HAL_I2C_Write
+	Obj/src_oled.o(.text.OLED_Set_Pos) refers to Obj/drivers_wm_i2c.o(.text.HAL_I2C_Write) for HAL_I2C_Write
+	Obj/src_oled.o(.text.OLED_ShowChar) refers to Obj/drivers_wm_i2c.o(.text.HAL_I2C_Write) for HAL_I2C_Write
+	Obj/src_oled.o(.text.OLED_Init) refers to Obj/drivers_wm_i2c.o(.text.HAL_I2C_Write) for HAL_I2C_Write
+	Obj/src_ina226.o(.text.INA226_Write2Byte) refers to Obj/drivers_wm_i2c.o(.text.HAL_I2C_Write) for HAL_I2C_Write
+	Obj/src_ina226.o(.text.INA226_Read2Byte) refers to Obj/drivers_wm_i2c.o(.text.HAL_I2C_Read) for HAL_I2C_Read
+	Obj/src_main.o(.text.Read_Flash) refers to Obj/drivers_wm_internal_flash.o(.text.HAL_FLASH_Read) for HAL_FLASH_Read
+	Obj/src_main.o(.text.Write_Flash) refers to Obj/drivers_wm_internal_flash.o(.text.HAL_FLASH_Write) for HAL_FLASH_Write
+	Obj/drivers_wm_tim.o(.text.HAL_TIM_Base_Init) refers to Obj/drivers_wm_tim.o(.text.HAL_TIM_Base_MspInit) for HAL_TIM_Base_MspInit
+	Obj/src_timer.o(.text.TIM_Init_Us) refers to Obj/drivers_wm_tim.o(.text.HAL_TIM_Base_Init) for HAL_TIM_Base_Init
+	Obj/src_main.o(.text.startup.main) refers to Obj/drivers_wm_tim.o(.text.HAL_TIM_Base_Start_IT) for HAL_TIM_Base_Start_IT
+	Obj/drivers_wm_tim.o(.text.HAL_TIM_IRQHandler) refers to Obj/drivers_wm_tim.o(.text.HAL_TIM_Callback) for HAL_TIM_Callback
+	Obj/bsp_startup.o(.text) refers to Obj/bsp_board_init.o(.text.board_init) for board_init
+	Obj/bsp_startup.o(.text) refers to Obj/bsp_system.o(.text.SystemInit) for SystemInit
+	Obj/libc_libc_port.o(.text.__assert_fail) refers to Obj/libc_libc_port.o(.text.wm_printf) for wm_printf
+	Obj/bsp_trap_c.o(.text.trap_c) refers to Obj/libc_libc_port.o(.text.wm_printf) for __cskyvprintfprintf
+	Obj/FreeRTOS_tasks.o(.text.vTaskSwitchContext) refers to Obj/libc_libc_port.o(.text.wm_printf) for __cskyvprintfprintf
+	Obj/src_main.o(.text.num2char) refers to Obj/libc_libc_port.o(.text.__assert_fail) for __assert_fail
+	Obj/src_main.o(.text.time2string) refers to Obj/libc_libc_port.o(.text.__assert_fail) for __assert_fail
+	puts.o(.text) refers to Obj/libc_libc_port.o(.text.fputc) for fputc
+	fputs.o(.text) refers to Obj/libc_libc_port.o(.text.fputc) for fputc
+	putc.o(.text) refers to Obj/libc_libc_port.o(.text.fputc) for fputc
+	Obj/libc_libc_port.o(.text._ftoa) refers to _fixunsdfsi.o(.text) for __fixunsdfsi
+	Obj/libc_libc_port.o(.text._ntoa_long_long) refers to _udivdi3.o(.text) for __udivdi3
+	Obj/libc_libc_port.o(.text._ntoa_long_long) refers to _umoddi3.o(.text) for __umoddi3
+	Obj/src_main.o(.text.OLED_Show) refers to _sf_to_df.o(.text) for __extendsfdf2
+	Obj/src_ina226.o(.text.Get_Shunt_voltage) refers to _sf_to_df.o(.text) for __extendsfdf2
+	Obj/libc_libc_port.o(.text._etoa) refers to _addsub_df.o(.text) for __adddf3
+	_fixunsdfsi.o(.text) refers to _addsub_df.o(.text) for __subdf3
+	Obj/libc_libc_port.o(.text._ftoa) refers to _addsub_df.o(.text) for __subdf3
+	Obj/libc_libc_port.o(.text._etoa) refers to _addsub_df.o(.text) for __subdf3
+	Obj/src_main.o(.text.num2char) refers to _mul_df.o(.text) for __muldf3
+	Obj/src_ina226.o(.text.Get_Shunt_voltage) refers to _mul_df.o(.text) for __muldf3
+	Obj/libc_libc_port.o(.text._ftoa) refers to _mul_df.o(.text) for __muldf3
+	Obj/libc_libc_port.o(.text._etoa) refers to _mul_df.o(.text) for __muldf3
+	Obj/libc_libc_port.o(.text._etoa) refers to _div_df.o(.text) for __divdf3
+	Obj/libc_libc_port.o(.text._ftoa) refers to _ne_df.o(.text) for __nedf2
+	Obj/libc_libc_port.o(.text._etoa) refers to _ne_df.o(.text) for __nedf2
+	Obj/libc_libc_port.o(.text._ftoa) refers to _gt_df.o(.text) for __gtdf2
+	Obj/libc_libc_port.o(.text._etoa) refers to _gt_df.o(.text) for __gtdf2
+	_fixunsdfsi.o(.text) refers to _ge_df.o(.text) for __gedf2
+	Obj/libc_libc_port.o(.text._ftoa) refers to _ge_df.o(.text) for __gedf2
+	Obj/libc_libc_port.o(.text._etoa) refers to _ge_df.o(.text) for __gedf2
+	Obj/libc_libc_port.o(.text._ftoa) refers to _lt_df.o(.text) for __ltdf2
+	Obj/libc_libc_port.o(.text._etoa) refers to _lt_df.o(.text) for __ltdf2
+	Obj/libc_libc_port.o(.text._ftoa) refers to _si_to_df.o(.text) for __floatsidf
+	Obj/libc_libc_port.o(.text._etoa) refers to _si_to_df.o(.text) for __floatsidf
+	_fixunsdfsi.o(.text) refers to _df_to_si.o(.text) for __fixdfsi
+	Obj/src_main.o(.text.num2char) refers to _df_to_si.o(.text) for __fixdfsi
+	Obj/libc_libc_port.o(.text._ftoa) refers to _df_to_si.o(.text) for __fixdfsi
+	Obj/libc_libc_port.o(.text._etoa) refers to _df_to_si.o(.text) for __fixdfsi
+	_sf_to_df.o(.text) refers to _make_df.o(.text) for __make_dp
+	Obj/src_ina226.o(.text.Get_Shunt_voltage) refers to _df_to_sf.o(.text) for __truncdfsf2
+	Obj/libc_libc_port.o(.text._ftoa) refers to _usi_to_df.o(.text) for __floatunsidf
+	_mul_df.o(.text) refers to _muldi3.o(.text) for __muldi3
+	_sf_to_df.o(.text) refers to _unpack_sf.o(.text) for __unpack_f
+	_df_to_sf.o(.text) refers to _make_sf.o(.text) for __make_fp
+	_addsub_df.o(.text) refers to _pack_df.o(.text) for __pack_d
+	_addsub_df.o(.text) refers to _pack_df.o(.text) for __pack_d
+	_mul_df.o(.text) refers to _pack_df.o(.text) for __pack_d
+	_div_df.o(.text) refers to _pack_df.o(.text) for __pack_d
+	_si_to_df.o(.text) refers to _pack_df.o(.text) for __pack_d
+	_make_df.o(.text) refers to _pack_df.o(.text) for __pack_d
+	_usi_to_df.o(.text) refers to _pack_df.o(.text) for __pack_d
+	_addsub_df.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_addsub_df.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_mul_df.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_div_df.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_ne_df.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_gt_df.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_ge_df.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_lt_df.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_df_to_si.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_df_to_sf.o(.text) refers to _unpack_df.o(.text) for __unpack_d
+	_ne_df.o(.text) refers to _fpcmp_parts_df.o(.text) for __fpcmp_parts_d
+	_gt_df.o(.text) refers to _fpcmp_parts_df.o(.text) for __fpcmp_parts_d
+	_ge_df.o(.text) refers to _fpcmp_parts_df.o(.text) for __fpcmp_parts_d
+	_lt_df.o(.text) refers to _fpcmp_parts_df.o(.text) for __fpcmp_parts_d
+	_make_sf.o(.text) refers to _pack_sf.o(.text) for __pack_f
+	Obj/bsp_trap_c.o(.text.trap_c) refers to putchar.o(.text) for putchar
+	Obj/src_main.o(.text.Write_Flash) refers to puts.o(.text) for puts
+	Obj/src_main.o(.text.Read_Flash) refers to puts.o(.text) for puts
+	Obj/src_main.o(.text.startup.main) refers to puts.o(.text) for puts
+	Obj/src_adc.o(.text.Error_Handler_Adc) refers to puts.o(.text) for puts
+	Obj/src_adc.o(.text.ADC_Init) refers to puts.o(.text) for puts
+	Obj/src_timer.o(.text.Error_Handler_Time) refers to puts.o(.text) for puts
+	Obj/src_iic.o(.text.I2C_Init) refers to puts.o(.text) for puts
+	Obj/src_ina226.o(.text.INA226_Read2Byte) refers to puts.o(.text) for puts
+	Obj/src_ina226.o(.text.INA226_Write2Byte) refers to puts.o(.text) for puts
+	puts.o(.text) refers to fputs.o(.text) for fputs
+	Obj/src_main.o(.text.num2char) refers to strlen_fast.o(.text) for strlen
+	Obj/src_main.o(.text.num2char) refers to memcpy_fast.o(.text) for memcpy
+	Obj/drivers_wm_internal_flash.o(.text.flashRead) refers to memcpy_fast.o(.text) for memcpy
+	fputs.o(.text) refers to critical.o(.text) for os_critical_enter
+	fputs.o(.text) refers to critical.o(.text) for os_critical_exit
+	putchar.o(.text) refers to putc.o(.text) for putc
+
+
+======================================================================
+
+Removing Unused input sections from the image. 
+
+	Removing .text(Obj/src_main.o), (0 bytes).
+	Removing .data(Obj/src_main.o), (0 bytes).
+	Removing .bss(Obj/src_main.o), (0 bytes).
+	Removing .text.assert_failed(Obj/src_main.o), (20 bytes).
+	Removing .rodata.assert_failed.str1.4(Obj/src_main.o), (45 bytes).
+	Removing .text(Obj/src_wm_hal_msp.o), (0 bytes).
+	Removing .data(Obj/src_wm_hal_msp.o), (0 bytes).
+	Removing .bss(Obj/src_wm_hal_msp.o), (0 bytes).
+	Removing .text.HAL_PWM_MspInit(Obj/src_wm_hal_msp.o), (44 bytes).
+	Removing .text.HAL_PWM_MspDeInit(Obj/src_wm_hal_msp.o), (32 bytes).
+	Removing .text.HAL_TIM_Base_MspDeInit(Obj/src_wm_hal_msp.o), (2 bytes).
+	Removing .text.HAL_SPI_MspInit(Obj/src_wm_hal_msp.o), (108 bytes).
+	Removing .text.HAL_SPI_MspDeInit(Obj/src_wm_hal_msp.o), (32 bytes).
+	Removing .text.HAL_ADC_MspDeInit(Obj/src_wm_hal_msp.o), (36 bytes).
+	Removing .text(Obj/src_wm_it.o), (0 bytes).
+	Removing .data(Obj/src_wm_it.o), (0 bytes).
+	Removing .bss(Obj/src_wm_it.o), (0 bytes).
+	Removing .text(Obj/src_adc.o), (0 bytes).
+	Removing .data(Obj/src_adc.o), (0 bytes).
+	Removing .bss(Obj/src_adc.o), (0 bytes).
+	Removing .text(Obj/src_gpio.o), (0 bytes).
+	Removing .data(Obj/src_gpio.o), (0 bytes).
+	Removing .bss(Obj/src_gpio.o), (0 bytes).
+	Removing .text(Obj/src_pwm.o), (0 bytes).
+	Removing .data(Obj/src_pwm.o), (0 bytes).
+	Removing .bss(Obj/src_pwm.o), (0 bytes).
+	Removing .text.PWM_Init(Obj/src_pwm.o), (76 bytes).
+	Removing .bss.hpwm(Obj/src_pwm.o), (220 bytes).
+	Removing .rodata.PWM_Init.str1.4(Obj/src_pwm.o), (74 bytes).
+	Removing .debug_info(Obj/src_pwm.o), (754 bytes).
+	Removing .debug_abbrev(Obj/src_pwm.o), (279 bytes).
+	Removing .debug_loc(Obj/src_pwm.o), (42 bytes).
+	Removing .debug_aranges(Obj/src_pwm.o), (32 bytes).
+	Removing .debug_ranges(Obj/src_pwm.o), (16 bytes).
+	Removing .debug_macinfo(Obj/src_pwm.o), (124848 bytes).
+	Removing .debug_line(Obj/src_pwm.o), (970 bytes).
+	Removing .debug_str(Obj/src_pwm.o), (635 bytes).
+	Removing .comment(Obj/src_pwm.o), (67 bytes).
+	Removing .debug_frame(Obj/src_pwm.o), (40 bytes).
+	Removing .csky.attributes(Obj/src_pwm.o), (56 bytes).
+	Removing .text(Obj/src_timer.o), (0 bytes).
+	Removing .data(Obj/src_timer.o), (0 bytes).
+	Removing .bss(Obj/src_timer.o), (0 bytes).
+	Removing .text.TIM_Init_Ms(Obj/src_timer.o), (44 bytes).
+	Removing .text(Obj/src_iic.o), (0 bytes).
+	Removing .data(Obj/src_iic.o), (0 bytes).
+	Removing .bss(Obj/src_iic.o), (0 bytes).
+	Removing .text(Obj/src_oled.o), (0 bytes).
+	Removing .data(Obj/src_oled.o), (0 bytes).
+	Removing .bss(Obj/src_oled.o), (0 bytes).
+	Removing .text.OLED_Display_On(Obj/src_oled.o), (80 bytes).
+	Removing .text.OLED_Display_Off(Obj/src_oled.o), (80 bytes).
+	Removing .text.OLED_On(Obj/src_oled.o), (120 bytes).
+	Removing .text.oled_pow(Obj/src_oled.o), (26 bytes).
+	Removing .text.OLED_ShowNum(Obj/src_oled.o), (160 bytes).
+	Removing .text.OLED_DrawPIC(Obj/src_oled.o), (144 bytes).
+	Removing .text.OLED_ShowCHinese(Obj/src_oled.o), (124 bytes).
+	Removing .data.Hzk(Obj/src_oled.o), (448 bytes).
+	Removing .data.PIC1(Obj/src_oled.o), (512 bytes).
+	Removing .data.PIC2(Obj/src_oled.o), (1024 bytes).
+	Removing .rodata.OLED_DrawPIC.str1.4(Obj/src_oled.o), (23 bytes).
+	Removing .text(Obj/src_ina226.o), (0 bytes).
+	Removing .data(Obj/src_ina226.o), (0 bytes).
+	Removing .bss(Obj/src_ina226.o), (0 bytes).
+	Removing .text.INA226_Get_ID(Obj/src_ina226.o), (10 bytes).
+	Removing .text.INA226_GetShunt_Current(Obj/src_ina226.o), (24 bytes).
+	Removing .text.INA226_GET_CAL_REG(Obj/src_ina226.o), (10 bytes).
+	Removing .text.INA226_GetVoltage(Obj/src_ina226.o), (10 bytes).
+	Removing .text.INA226_GetShuntVoltage(Obj/src_ina226.o), (24 bytes).
+	Removing .text.Get_Voltage(Obj/src_ina226.o), (32 bytes).
+	Removing .text.Get_Shunt_Current(Obj/src_ina226.o), (60 bytes).
+	Removing .text.INA226_GetPower(Obj/src_ina226.o), (24 bytes).
+	Removing .text.Get_Power_F(Obj/src_ina226.o), (48 bytes).
+	Removing .rodata.INA226_GetPower.str1.4(Obj/src_ina226.o), (70 bytes).
+	Removing .text(Obj/src_spi.o), (0 bytes).
+	Removing .data(Obj/src_spi.o), (0 bytes).
+	Removing .bss(Obj/src_spi.o), (0 bytes).
+	Removing .text.SPI_Init(Obj/src_spi.o), (60 bytes).
+	Removing .rodata.SPI_Init.str1.4(Obj/src_spi.o), (17 bytes).
+	Removing .debug_info(Obj/src_spi.o), (930 bytes).
+	Removing .debug_abbrev(Obj/src_spi.o), (309 bytes).
+	Removing .debug_aranges(Obj/src_spi.o), (32 bytes).
+	Removing .debug_ranges(Obj/src_spi.o), (16 bytes).
+	Removing .debug_macinfo(Obj/src_spi.o), (124996 bytes).
+	Removing .debug_line(Obj/src_spi.o), (973 bytes).
+	Removing .debug_str(Obj/src_spi.o), (978 bytes).
+	Removing .comment(Obj/src_spi.o), (67 bytes).
+	Removing .debug_frame(Obj/src_spi.o), (40 bytes).
+	Removing .csky.attributes(Obj/src_spi.o), (56 bytes).
+	Removing COMMON(Obj/src_spi.o), (64 bytes).
+	Removing .text(Obj/drivers_wm_adc.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_adc.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_adc.o), (0 bytes).
+	Removing .text.HAL_ADC_Start.part.0(Obj/drivers_wm_adc.o), (50 bytes).
+	Removing .text.HAL_ADC_MspInit(Obj/drivers_wm_adc.o), (2 bytes).
+	Removing .text.HAL_ADC_MspDeInit(Obj/drivers_wm_adc.o), (2 bytes).
+	Removing .text.HAL_ADC_DeInit(Obj/drivers_wm_adc.o), (38 bytes).
+	Removing .text.HAL_ADC_Start(Obj/drivers_wm_adc.o), (18 bytes).
+	Removing .text.HAL_ADC_Stop(Obj/drivers_wm_adc.o), (34 bytes).
+	Removing .text.HAL_ADC_PollForConversion(Obj/drivers_wm_adc.o), (26 bytes).
+	Removing .text.HAL_ADC_GetValue(Obj/drivers_wm_adc.o), (48 bytes).
+	Removing .text.HAL_ADC_GET_INPUT_VOLTAGE(Obj/drivers_wm_adc.o), (188 bytes).
+	Removing .text.HAL_ADC_Start_IT(Obj/drivers_wm_adc.o), (68 bytes).
+	Removing .text.HAL_ADC_Stop_IT(Obj/drivers_wm_adc.o), (40 bytes).
+	Removing .text.HAL_ADC_Start_Compare_IT(Obj/drivers_wm_adc.o), (92 bytes).
+	Removing .text.HAL_ADC_Stop_Compare_IT(Obj/drivers_wm_adc.o), (42 bytes).
+	Removing .text.HAL_ADC_ConvCpltCallback(Obj/drivers_wm_adc.o), (2 bytes).
+	Removing .text(Obj/drivers_wm_cpu.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_cpu.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_cpu.o), (0 bytes).
+	Removing .text.HAL_NVIC_DisableIRQ(Obj/drivers_wm_cpu.o), (28 bytes).
+	Removing .text(Obj/drivers_wm_gpio.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_gpio.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_gpio.o), (0 bytes).
+	Removing .text.HAL_GPIO_DeInit(Obj/drivers_wm_gpio.o), (88 bytes).
+	Removing .text.HAL_GPIO_Option(Obj/drivers_wm_gpio.o), (168 bytes).
+	Removing .rodata.HAL_GPIO_Option(Obj/drivers_wm_gpio.o), (32 bytes).
+	Removing .text.HAL_GPIO_TogglePin(Obj/drivers_wm_gpio.o), (86 bytes).
+	Removing .text.HAL_GPIO_EXTI_Callback(Obj/drivers_wm_gpio.o), (2 bytes).
+	Removing .text(Obj/drivers_wm_hal.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_hal.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_hal.o), (0 bytes).
+	Removing .text.HAL_DeInit(Obj/drivers_wm_hal.o), (4 bytes).
+	Removing .text.HAL_MspInit(Obj/drivers_wm_hal.o), (2 bytes).
+	Removing .text.HAL_MspDeInit(Obj/drivers_wm_hal.o), (2 bytes).
+	Removing .text(Obj/drivers_wm_i2c.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_i2c.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_i2c.o), (0 bytes).
+	Removing .text.HAL_I2C_DeInit(Obj/drivers_wm_i2c.o), (24 bytes).
+	Removing .text(Obj/drivers_wm_internal_flash.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_internal_flash.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_internal_flash.o), (0 bytes).
+	Removing .text.writeBpBit_for_2wreg.constprop.2(Obj/drivers_wm_internal_flash.o), (140 bytes).
+	Removing .text.tls_flash_unlock(Obj/drivers_wm_internal_flash.o), (258 bytes).
+	Removing .text.tls_flash_lock(Obj/drivers_wm_internal_flash.o), (266 bytes).
+	Removing .text(Obj/drivers_wm_pmu.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_pmu.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_pmu.o), (0 bytes).
+	Removing .text.HAL_PMU_MspInit(Obj/drivers_wm_pmu.o), (2 bytes).
+	Removing .text.HAL_PMU_Init(Obj/drivers_wm_pmu.o), (66 bytes).
+	Removing .text.HAL_PMU_MspDeInit(Obj/drivers_wm_pmu.o), (2 bytes).
+	Removing .text.HAL_PMU_DeInit(Obj/drivers_wm_pmu.o), (50 bytes).
+	Removing .text.HAL_PMU_Enter_Sleep(Obj/drivers_wm_pmu.o), (12 bytes).
+	Removing .text.HAL_PMU_Enter_Standby(Obj/drivers_wm_pmu.o), (12 bytes).
+	Removing .text.HAL_PMU_TIMER0_Start(Obj/drivers_wm_pmu.o), (18 bytes).
+	Removing .text.HAL_PMU_TIMER0_Stop(Obj/drivers_wm_pmu.o), (20 bytes).
+	Removing .text.HAL_PMU_RTC_GetTime(Obj/drivers_wm_pmu.o), (72 bytes).
+	Removing .text.HAL_PMU_RTC_Start(Obj/drivers_wm_pmu.o), (96 bytes).
+	Removing .text.HAL_PMU_RTC_Stop(Obj/drivers_wm_pmu.o), (20 bytes).
+	Removing .text.HAL_PMU_RTC_Alarm_Enable(Obj/drivers_wm_pmu.o), (88 bytes).
+	Removing .text.HAL_PMU_RTC_Alarm_Disable(Obj/drivers_wm_pmu.o), (22 bytes).
+	Removing .text.HAL_PMU_Tim0_Callback(Obj/drivers_wm_pmu.o), (2 bytes).
+	Removing .text.HAL_PMU_IO_Callback(Obj/drivers_wm_pmu.o), (2 bytes).
+	Removing .text.HAL_PMU_RTC_Callback(Obj/drivers_wm_pmu.o), (2 bytes).
+	Removing .text.HAL_PMU_IRQHandler(Obj/drivers_wm_pmu.o), (64 bytes).
+	Removing .debug_info(Obj/drivers_wm_pmu.o), (1318 bytes).
+	Removing .debug_abbrev(Obj/drivers_wm_pmu.o), (376 bytes).
+	Removing .debug_loc(Obj/drivers_wm_pmu.o), (502 bytes).
+	Removing .debug_aranges(Obj/drivers_wm_pmu.o), (128 bytes).
+	Removing .debug_ranges(Obj/drivers_wm_pmu.o), (112 bytes).
+	Removing .debug_macinfo(Obj/drivers_wm_pmu.o), (124835 bytes).
+	Removing .debug_line(Obj/drivers_wm_pmu.o), (1292 bytes).
+	Removing .debug_str(Obj/drivers_wm_pmu.o), (932 bytes).
+	Removing .comment(Obj/drivers_wm_pmu.o), (67 bytes).
+	Removing .debug_frame(Obj/drivers_wm_pmu.o), (316 bytes).
+	Removing .csky.attributes(Obj/drivers_wm_pmu.o), (56 bytes).
+	Removing .text(Obj/drivers_wm_pwm.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_pwm.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_pwm.o), (0 bytes).
+	Removing .text.__PWM_OutMode_Config(Obj/drivers_wm_pwm.o), (280 bytes).
+	Removing .text.__PWM_CountType_Config(Obj/drivers_wm_pwm.o), (52 bytes).
+	Removing .text.__PWM_Freq_Config(Obj/drivers_wm_pwm.o), (198 bytes).
+	Removing .text.__PWM_Duty_Config(Obj/drivers_wm_pwm.o), (122 bytes).
+	Removing .text.__PWM_AutoReload_Config(Obj/drivers_wm_pwm.o), (48 bytes).
+	Removing .text.__PWM_OutInverse_Config(Obj/drivers_wm_pwm.o), (46 bytes).
+	Removing .text.__PWM_OutEn_Config(Obj/drivers_wm_pwm.o), (32 bytes).
+	Removing .text.HAL_PWM_MspInit(Obj/drivers_wm_pwm.o), (2 bytes).
+	Removing .text.HAL_PWM_Init(Obj/drivers_wm_pwm.o), (114 bytes).
+	Removing .text.HAL_PWM_MspDeInit(Obj/drivers_wm_pwm.o), (2 bytes).
+	Removing .text.HAL_PWM_DeInit(Obj/drivers_wm_pwm.o), (10 bytes).
+	Removing .text.HAL_PWM_Start(Obj/drivers_wm_pwm.o), (28 bytes).
+	Removing .text.HAL_PWM_Stop(Obj/drivers_wm_pwm.o), (28 bytes).
+	Removing .text.HAL_PWM_Duty_Set(Obj/drivers_wm_pwm.o), (18 bytes).
+	Removing .text.HAL_PWM_Freq_Set(Obj/drivers_wm_pwm.o), (18 bytes).
+	Removing .debug_info(Obj/drivers_wm_pwm.o), (2066 bytes).
+	Removing .debug_abbrev(Obj/drivers_wm_pwm.o), (481 bytes).
+	Removing .debug_loc(Obj/drivers_wm_pwm.o), (1701 bytes).
+	Removing .debug_aranges(Obj/drivers_wm_pwm.o), (136 bytes).
+	Removing .debug_ranges(Obj/drivers_wm_pwm.o), (312 bytes).
+	Removing .debug_macinfo(Obj/drivers_wm_pwm.o), (124835 bytes).
+	Removing .debug_line(Obj/drivers_wm_pwm.o), (1462 bytes).
+	Removing .debug_str(Obj/drivers_wm_pwm.o), (973 bytes).
+	Removing .comment(Obj/drivers_wm_pwm.o), (67 bytes).
+	Removing .debug_frame(Obj/drivers_wm_pwm.o), (288 bytes).
+	Removing .csky.attributes(Obj/drivers_wm_pwm.o), (56 bytes).
+	Removing .text(Obj/drivers_wm_spi.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_spi.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_spi.o), (0 bytes).
+	Removing .text.HAL_SPI_MspInit(Obj/drivers_wm_spi.o), (2 bytes).
+	Removing .text.HAL_SPI_Init(Obj/drivers_wm_spi.o), (88 bytes).
+	Removing .text.HAL_SPI_MspDeInit(Obj/drivers_wm_spi.o), (2 bytes).
+	Removing .text.HAL_SPI_DeInit(Obj/drivers_wm_spi.o), (44 bytes).
+	Removing .text.HAL_SPI_Transmit(Obj/drivers_wm_spi.o), (470 bytes).
+	Removing .text.HAL_SPI_Receive(Obj/drivers_wm_spi.o), (498 bytes).
+	Removing .text.HAL_SPI_TransmitReceive(Obj/drivers_wm_spi.o), (664 bytes).
+	Removing .debug_info(Obj/drivers_wm_spi.o), (1744 bytes).
+	Removing .debug_abbrev(Obj/drivers_wm_spi.o), (512 bytes).
+	Removing .debug_loc(Obj/drivers_wm_spi.o), (1660 bytes).
+	Removing .debug_aranges(Obj/drivers_wm_spi.o), (72 bytes).
+	Removing .debug_ranges(Obj/drivers_wm_spi.o), (56 bytes).
+	Removing .debug_macinfo(Obj/drivers_wm_spi.o), (124835 bytes).
+	Removing .debug_line(Obj/drivers_wm_spi.o), (1517 bytes).
+	Removing .debug_str(Obj/drivers_wm_spi.o), (1234 bytes).
+	Removing .comment(Obj/drivers_wm_spi.o), (67 bytes).
+	Removing .debug_frame(Obj/drivers_wm_spi.o), (252 bytes).
+	Removing .csky.attributes(Obj/drivers_wm_spi.o), (56 bytes).
+	Removing .text(Obj/drivers_wm_spi_flash.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_spi_flash.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_spi_flash.o), (0 bytes).
+	Removing .text.fls_drv_write_enable(Obj/drivers_wm_spi_flash.o), (52 bytes).
+	Removing .text.fls_drv_wait_write_enable(Obj/drivers_wm_spi_flash.o), (108 bytes).
+	Removing .text.fls_drv_wait_flash_ready(Obj/drivers_wm_spi_flash.o), (108 bytes).
+	Removing .text.fls_drv_page_write(Obj/drivers_wm_spi_flash.o), (136 bytes).
+	Removing .text.fls_drv_erase(Obj/drivers_wm_spi_flash.o), (108 bytes).
+	Removing .text.fls_drv_read_id(Obj/drivers_wm_spi_flash.o), (112 bytes).
+	Removing .text.fls_drv_read(Obj/drivers_wm_spi_flash.o), (80 bytes).
+	Removing .text.SPIFLS_Init(Obj/drivers_wm_spi_flash.o), (84 bytes).
+	Removing .text.SPIFLS_Read_ID(Obj/drivers_wm_spi_flash.o), (26 bytes).
+	Removing .text.SPIFLS_Page_Write(Obj/drivers_wm_spi_flash.o), (40 bytes).
+	Removing .text.SPIFLS_Read(Obj/drivers_wm_spi_flash.o), (44 bytes).
+	Removing .text.SPIFLS_Write(Obj/drivers_wm_spi_flash.o), (320 bytes).
+	Removing .text.SPIFLS_Erase(Obj/drivers_wm_spi_flash.o), (28 bytes).
+	Removing .text.SPIFLS_Chip_Erase(Obj/drivers_wm_spi_flash.o), (80 bytes).
+	Removing .bss.cache(Obj/drivers_wm_spi_flash.o), (4096 bytes).
+	Removing .bss.hspi(Obj/drivers_wm_spi_flash.o), (64 bytes).
+	Removing .bss.total_size(Obj/drivers_wm_spi_flash.o), (4 bytes).
+	Removing .debug_info(Obj/drivers_wm_spi_flash.o), (2378 bytes).
+	Removing .debug_abbrev(Obj/drivers_wm_spi_flash.o), (662 bytes).
+	Removing .debug_loc(Obj/drivers_wm_spi_flash.o), (1209 bytes).
+	Removing .debug_aranges(Obj/drivers_wm_spi_flash.o), (136 bytes).
+	Removing .debug_ranges(Obj/drivers_wm_spi_flash.o), (168 bytes).
+	Removing .debug_macinfo(Obj/drivers_wm_spi_flash.o), (124835 bytes).
+	Removing .debug_line(Obj/drivers_wm_spi_flash.o), (1477 bytes).
+	Removing .debug_str(Obj/drivers_wm_spi_flash.o), (1328 bytes).
+	Removing .comment(Obj/drivers_wm_spi_flash.o), (67 bytes).
+	Removing .debug_frame(Obj/drivers_wm_spi_flash.o), (488 bytes).
+	Removing .csky.attributes(Obj/drivers_wm_spi_flash.o), (56 bytes).
+	Removing .text(Obj/drivers_wm_tim.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_tim.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_tim.o), (0 bytes).
+	Removing .text.HAL_TIM_Base_MspInit(Obj/drivers_wm_tim.o), (2 bytes).
+	Removing .text.HAL_TIM_Base_MspDeInit(Obj/drivers_wm_tim.o), (2 bytes).
+	Removing .text.HAL_TIM_Base_DeInit(Obj/drivers_wm_tim.o), (52 bytes).
+	Removing .text.HAL_TIM_Base_Start(Obj/drivers_wm_tim.o), (44 bytes).
+	Removing .text.HAL_TIM_Base_Stop(Obj/drivers_wm_tim.o), (36 bytes).
+	Removing .text.HAL_TIM_Base_Stop_IT(Obj/drivers_wm_tim.o), (56 bytes).
+	Removing .text.HAL_TIM_Base_GetState(Obj/drivers_wm_tim.o), (4 bytes).
+	Removing .text.HAL_TIM_Callback(Obj/drivers_wm_tim.o), (2 bytes).
+	Removing .text(Obj/drivers_wm_touch.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_touch.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_touch.o), (0 bytes).
+	Removing .text.HAL_TOUCH_MspInit(Obj/drivers_wm_touch.o), (2 bytes).
+	Removing .text.HAL_TOUCH_Init(Obj/drivers_wm_touch.o), (152 bytes).
+	Removing .text.HAL_TOUCH_MspDeInit(Obj/drivers_wm_touch.o), (2 bytes).
+	Removing .text.HAL_TOUCH_DeInit(Obj/drivers_wm_touch.o), (26 bytes).
+	Removing .text.HAL_TOUCH_Callback(Obj/drivers_wm_touch.o), (2 bytes).
+	Removing .text.HAL_TOUCH_IRQHandler(Obj/drivers_wm_touch.o), (22 bytes).
+	Removing .debug_info(Obj/drivers_wm_touch.o), (1046 bytes).
+	Removing .debug_abbrev(Obj/drivers_wm_touch.o), (450 bytes).
+	Removing .debug_loc(Obj/drivers_wm_touch.o), (152 bytes).
+	Removing .debug_aranges(Obj/drivers_wm_touch.o), (64 bytes).
+	Removing .debug_ranges(Obj/drivers_wm_touch.o), (48 bytes).
+	Removing .debug_macinfo(Obj/drivers_wm_touch.o), (124835 bytes).
+	Removing .debug_line(Obj/drivers_wm_touch.o), (1063 bytes).
+	Removing .debug_str(Obj/drivers_wm_touch.o), (836 bytes).
+	Removing .comment(Obj/drivers_wm_touch.o), (67 bytes).
+	Removing .debug_frame(Obj/drivers_wm_touch.o), (136 bytes).
+	Removing .csky.attributes(Obj/drivers_wm_touch.o), (56 bytes).
+	Removing .text(Obj/drivers_wm_uart.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_uart.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_uart.o), (0 bytes).
+	Removing .text.HAL_UART_MspInit(Obj/drivers_wm_uart.o), (2 bytes).
+	Removing .text.HAL_UART_Init(Obj/drivers_wm_uart.o), (200 bytes).
+	Removing .text.HAL_UART_MspDeInit(Obj/drivers_wm_uart.o), (2 bytes).
+	Removing .text.HAL_UART_DeInit(Obj/drivers_wm_uart.o), (42 bytes).
+	Removing .text.HAL_UART_Transmit(Obj/drivers_wm_uart.o), (262 bytes).
+	Removing .text.HAL_UART_Receive(Obj/drivers_wm_uart.o), (210 bytes).
+	Removing .text.HAL_UART_Transmit_IT(Obj/drivers_wm_uart.o), (104 bytes).
+	Removing .text.HAL_UART_Receive_IT(Obj/drivers_wm_uart.o), (70 bytes).
+	Removing .text.HAL_UART_TxCpltCallback(Obj/drivers_wm_uart.o), (2 bytes).
+	Removing .text.HAL_UART_RxCpltCallback(Obj/drivers_wm_uart.o), (2 bytes).
+	Removing .text.HAL_UART_IRQHandler(Obj/drivers_wm_uart.o), (284 bytes).
+	Removing .debug_info(Obj/drivers_wm_uart.o), (2267 bytes).
+	Removing .debug_abbrev(Obj/drivers_wm_uart.o), (647 bytes).
+	Removing .debug_loc(Obj/drivers_wm_uart.o), (1567 bytes).
+	Removing .debug_aranges(Obj/drivers_wm_uart.o), (88 bytes).
+	Removing .debug_ranges(Obj/drivers_wm_uart.o), (224 bytes).
+	Removing .debug_macinfo(Obj/drivers_wm_uart.o), (124835 bytes).
+	Removing .debug_line(Obj/drivers_wm_uart.o), (1434 bytes).
+	Removing .debug_str(Obj/drivers_wm_uart.o), (1512 bytes).
+	Removing .comment(Obj/drivers_wm_uart.o), (67 bytes).
+	Removing .debug_frame(Obj/drivers_wm_uart.o), (276 bytes).
+	Removing .csky.attributes(Obj/drivers_wm_uart.o), (56 bytes).
+	Removing .text(Obj/drivers_wm_wdg.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_wdg.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_wdg.o), (0 bytes).
+	Removing .text.HAL_WDG_DeInit(Obj/drivers_wm_wdg.o), (22 bytes).
+	Removing .text.HAL_WDG_MspInit(Obj/drivers_wm_wdg.o), (2 bytes).
+	Removing .text.HAL_WDG_Init(Obj/drivers_wm_wdg.o), (46 bytes).
+	Removing .text.HAL_WDG_IRQHandler(Obj/drivers_wm_wdg.o), (8 bytes).
+	Removing .debug_info(Obj/drivers_wm_wdg.o), (942 bytes).
+	Removing .debug_abbrev(Obj/drivers_wm_wdg.o), (378 bytes).
+	Removing .debug_loc(Obj/drivers_wm_wdg.o), (82 bytes).
+	Removing .debug_aranges(Obj/drivers_wm_wdg.o), (56 bytes).
+	Removing .debug_ranges(Obj/drivers_wm_wdg.o), (40 bytes).
+	Removing .debug_macinfo(Obj/drivers_wm_wdg.o), (124835 bytes).
+	Removing .debug_line(Obj/drivers_wm_wdg.o), (1022 bytes).
+	Removing .debug_str(Obj/drivers_wm_wdg.o), (1013 bytes).
+	Removing .comment(Obj/drivers_wm_wdg.o), (67 bytes).
+	Removing .debug_frame(Obj/drivers_wm_wdg.o), (108 bytes).
+	Removing .csky.attributes(Obj/drivers_wm_wdg.o), (56 bytes).
+	Removing .text(Obj/drivers_wm_lcd.o), (0 bytes).
+	Removing .data(Obj/drivers_wm_lcd.o), (0 bytes).
+	Removing .bss(Obj/drivers_wm_lcd.o), (0 bytes).
+	Removing .text.HAL_LCD_Ratio(Obj/drivers_wm_lcd.o), (40 bytes).
+	Removing .text.HAL_LCD_VlcdSet(Obj/drivers_wm_lcd.o), (24 bytes).
+	Removing .text.HAL_LCD_DutySet(Obj/drivers_wm_lcd.o), (24 bytes).
+	Removing .text.HAL_LCD_BiasSet(Obj/drivers_wm_lcd.o), (24 bytes).
+	Removing .text.HAL_LCD_ComSegEnable(Obj/drivers_wm_lcd.o), (12 bytes).
+	Removing .text.HAL_LCD_ShowSeg(Obj/drivers_wm_lcd.o), (68 bytes).
+	Removing .rodata.HAL_LCD_ShowSeg(Obj/drivers_wm_lcd.o), (32 bytes).
+	Removing .text.HAL_LCD_DigitPower(Obj/drivers_wm_lcd.o), (28 bytes).
+	Removing .text.HAL_LCD_AnalogPower(Obj/drivers_wm_lcd.o), (28 bytes).
+	Removing .text.HAL_LCD_Init(Obj/drivers_wm_lcd.o), (172 bytes).
+	Removing .rodata.CSWTCH.9(Obj/drivers_wm_lcd.o), (16 bytes).
+	Removing .debug_info(Obj/drivers_wm_lcd.o), (1781 bytes).
+	Removing .debug_abbrev(Obj/drivers_wm_lcd.o), (450 bytes).
+	Removing .debug_loc(Obj/drivers_wm_lcd.o), (264 bytes).
+	Removing .debug_aranges(Obj/drivers_wm_lcd.o), (96 bytes).
+	Removing .debug_ranges(Obj/drivers_wm_lcd.o), (216 bytes).
+	Removing .debug_macinfo(Obj/drivers_wm_lcd.o), (124835 bytes).
+	Removing .debug_line(Obj/drivers_wm_lcd.o), (1224 bytes).
+	Removing .debug_str(Obj/drivers_wm_lcd.o), (1083 bytes).
+	Removing .comment(Obj/drivers_wm_lcd.o), (67 bytes).
+	Removing .debug_frame(Obj/drivers_wm_lcd.o), (176 bytes).
+	Removing .csky.attributes(Obj/drivers_wm_lcd.o), (56 bytes).
+	Removing .text(Obj/bsp_board_init.o), (0 bytes).
+	Removing .data(Obj/bsp_board_init.o), (0 bytes).
+	Removing .bss(Obj/bsp_board_init.o), (0 bytes).
+	Removing .data(Obj/bsp_startup.o), (0 bytes).
+	Removing .text(Obj/bsp_system.o), (0 bytes).
+	Removing .data(Obj/bsp_system.o), (0 bytes).
+	Removing .bss(Obj/bsp_system.o), (0 bytes).
+	Removing .text(Obj/bsp_trap_c.o), (0 bytes).
+	Removing .data(Obj/bsp_trap_c.o), (0 bytes).
+	Removing .bss(Obj/bsp_trap_c.o), (0 bytes).
+	Removing .data(Obj/bsp_vectors.o), (0 bytes).
+	Removing .text(Obj/libc_libc_port.o), (0 bytes).
+	Removing .data(Obj/libc_libc_port.o), (0 bytes).
+	Removing .bss(Obj/libc_libc_port.o), (0 bytes).
+	Removing .text._out_buffer(Obj/libc_libc_port.o), (10 bytes).
+	Removing .text.sendchar(Obj/libc_libc_port.o), (24 bytes).
+	Removing .text.sendchar1(Obj/libc_libc_port.o), (24 bytes).
+	Removing .text.fgetc(Obj/libc_libc_port.o), (4 bytes).
+	Removing .text._write_r(Obj/libc_libc_port.o), (48 bytes).
+	Removing .text.strntoumax(Obj/libc_libc_port.o), (324 bytes).
+	Removing .text.wm_vsscanf(Obj/libc_libc_port.o), (1546 bytes).
+	Removing .rodata.wm_vsscanf(Obj/libc_libc_port.o), (552 bytes).
+	Removing .text.wm_vsnprintf(Obj/libc_libc_port.o), (28 bytes).
+	Removing .text.wm_vprintf(Obj/libc_libc_port.o), (28 bytes).
+	Removing .text.sscanf(Obj/libc_libc_port.o), (26 bytes).
+	Removing .text.__cskyvscanfsscanf(Obj/libc_libc_port.o), (26 bytes).
+	Removing .text.__cskyvprintfsprintf(Obj/libc_libc_port.o), (48 bytes).
+	Removing .text.__cskyvprintfsnprintf(Obj/libc_libc_port.o), (44 bytes).
+	Removing .text.__cskyvprintfvsnprintf(Obj/libc_libc_port.o), (28 bytes).
+	Removing .text.__cskyvprintfvsprintf(Obj/libc_libc_port.o), (28 bytes).
+	Removing .text(Obj/FreeRTOS_croutine.o), (0 bytes).
+	Removing .data(Obj/FreeRTOS_croutine.o), (0 bytes).
+	Removing .bss(Obj/FreeRTOS_croutine.o), (0 bytes).
+	Removing .debug_info(Obj/FreeRTOS_croutine.o), (237 bytes).
+	Removing .debug_abbrev(Obj/FreeRTOS_croutine.o), (119 bytes).
+	Removing .debug_aranges(Obj/FreeRTOS_croutine.o), (24 bytes).
+	Removing .debug_macinfo(Obj/FreeRTOS_croutine.o), (44504 bytes).
+	Removing .debug_line(Obj/FreeRTOS_croutine.o), (778 bytes).
+	Removing .debug_str(Obj/FreeRTOS_croutine.o), (395 bytes).
+	Removing .comment(Obj/FreeRTOS_croutine.o), (67 bytes).
+	Removing .csky.attributes(Obj/FreeRTOS_croutine.o), (56 bytes).
+	Removing .text(Obj/FreeRTOS_event_groups.o), (0 bytes).
+	Removing .data(Obj/FreeRTOS_event_groups.o), (0 bytes).
+	Removing .bss(Obj/FreeRTOS_event_groups.o), (0 bytes).
+	Removing .text.xEventGroupCreateStatic(Obj/FreeRTOS_event_groups.o), (76 bytes).
+	Removing .text.xEventGroupCreate(Obj/FreeRTOS_event_groups.o), (30 bytes).
+	Removing .text.xEventGroupWaitBits(Obj/FreeRTOS_event_groups.o), (260 bytes).
+	Removing .text.xEventGroupClearBits(Obj/FreeRTOS_event_groups.o), (76 bytes).
+	Removing .text.xEventGroupGetBitsFromISR(Obj/FreeRTOS_event_groups.o), (16 bytes).
+	Removing .text.xEventGroupSetBits(Obj/FreeRTOS_event_groups.o), (180 bytes).
+	Removing .text.xEventGroupSync(Obj/FreeRTOS_event_groups.o), (232 bytes).
+	Removing .text.vEventGroupDelete(Obj/FreeRTOS_event_groups.o), (96 bytes).
+	Removing .text.vEventGroupSetBitsCallback(Obj/FreeRTOS_event_groups.o), (8 bytes).
+	Removing .text.vEventGroupClearBitsCallback(Obj/FreeRTOS_event_groups.o), (8 bytes).
+	Removing .text.uxEventGroupGetNumber(Obj/FreeRTOS_event_groups.o), (8 bytes).
+	Removing .text.vEventGroupSetNumber(Obj/FreeRTOS_event_groups.o), (4 bytes).
+	Removing .rodata.xEventGroupCreateStatic.str1.4(Obj/FreeRTOS_event_groups.o), (65 bytes).
+	Removing .debug_info(Obj/FreeRTOS_event_groups.o), (2556 bytes).
+	Removing .debug_abbrev(Obj/FreeRTOS_event_groups.o), (705 bytes).
+	Removing .debug_loc(Obj/FreeRTOS_event_groups.o), (2487 bytes).
+	Removing .debug_aranges(Obj/FreeRTOS_event_groups.o), (120 bytes).
+	Removing .debug_ranges(Obj/FreeRTOS_event_groups.o), (192 bytes).
+	Removing .debug_macinfo(Obj/FreeRTOS_event_groups.o), (45069 bytes).
+	Removing .debug_line(Obj/FreeRTOS_event_groups.o), (1329 bytes).
+	Removing .debug_str(Obj/FreeRTOS_event_groups.o), (1648 bytes).
+	Removing .comment(Obj/FreeRTOS_event_groups.o), (67 bytes).
+	Removing .debug_frame(Obj/FreeRTOS_event_groups.o), (332 bytes).
+	Removing .csky.attributes(Obj/FreeRTOS_event_groups.o), (56 bytes).
+	Removing .text(Obj/FreeRTOS_list.o), (0 bytes).
+	Removing .data(Obj/FreeRTOS_list.o), (0 bytes).
+	Removing .bss(Obj/FreeRTOS_list.o), (0 bytes).
+	Removing .text.vListInitialise(Obj/FreeRTOS_list.o), (20 bytes).
+	Removing .text.vListInitialiseItem(Obj/FreeRTOS_list.o), (6 bytes).
+	Removing .text.vListInsertEnd(Obj/FreeRTOS_list.o), (24 bytes).
+	Removing .text.vListInsert(Obj/FreeRTOS_list.o), (52 bytes).
+	Removing .text.uxListRemove(Obj/FreeRTOS_list.o), (36 bytes).
+	Removing .debug_info(Obj/FreeRTOS_list.o), (779 bytes).
+	Removing .debug_abbrev(Obj/FreeRTOS_list.o), (303 bytes).
+	Removing .debug_loc(Obj/FreeRTOS_list.o), (91 bytes).
+	Removing .debug_aranges(Obj/FreeRTOS_list.o), (64 bytes).
+	Removing .debug_ranges(Obj/FreeRTOS_list.o), (48 bytes).
+	Removing .debug_macinfo(Obj/FreeRTOS_list.o), (38082 bytes).
+	Removing .debug_line(Obj/FreeRTOS_list.o), (896 bytes).
+	Removing .debug_str(Obj/FreeRTOS_list.o), (705 bytes).
+	Removing .comment(Obj/FreeRTOS_list.o), (67 bytes).
+	Removing .debug_frame(Obj/FreeRTOS_list.o), (96 bytes).
+	Removing .csky.attributes(Obj/FreeRTOS_list.o), (56 bytes).
+	Removing .text(Obj/FreeRTOS_queue.o), (0 bytes).
+	Removing .data(Obj/FreeRTOS_queue.o), (0 bytes).
+	Removing .bss(Obj/FreeRTOS_queue.o), (0 bytes).
+	Removing .text.prvCopyDataToQueue(Obj/FreeRTOS_queue.o), (128 bytes).
+	Removing .text.prvCopyDataFromQueue(Obj/FreeRTOS_queue.o), (36 bytes).
+	Removing .text.prvUnlockQueue(Obj/FreeRTOS_queue.o), (162 bytes).
+	Removing .text.xQueueGenericReset(Obj/FreeRTOS_queue.o), (148 bytes).
+	Removing .text.xQueueGenericCreateStatic(Obj/FreeRTOS_queue.o), (180 bytes).
+	Removing .text.xQueueGenericCreate(Obj/FreeRTOS_queue.o), (128 bytes).
+	Removing .text.xQueueCreateCountingSemaphoreStatic(Obj/FreeRTOS_queue.o), (76 bytes).
+	Removing .text.xQueueCreateCountingSemaphore(Obj/FreeRTOS_queue.o), (64 bytes).
+	Removing .text.xQueueGenericSend(Obj/FreeRTOS_queue.o), (372 bytes).
+	Removing .text.xQueueCreateMutex(Obj/FreeRTOS_queue.o), (38 bytes).
+	Removing .text.xQueueCreateMutexStatic(Obj/FreeRTOS_queue.o), (46 bytes).
+	Removing .text.xQueueGiveMutexRecursive(Obj/FreeRTOS_queue.o), (72 bytes).
+	Removing .text.xQueueGenericSendFromISR(Obj/FreeRTOS_queue.o), (200 bytes).
+	Removing .text.xQueueGiveFromISR(Obj/FreeRTOS_queue.o), (184 bytes).
+	Removing .text.xQueueReceive(Obj/FreeRTOS_queue.o), (336 bytes).
+	Removing .text.xQueueSemaphoreTake(Obj/FreeRTOS_queue.o), (428 bytes).
+	Removing .text.xQueueTakeMutexRecursive(Obj/FreeRTOS_queue.o), (72 bytes).
+	Removing .text.xQueuePeek(Obj/FreeRTOS_queue.o), (332 bytes).
+	Removing .text.xQueueReceiveFromISR(Obj/FreeRTOS_queue.o), (172 bytes).
+	Removing .text.xQueuePeekFromISR(Obj/FreeRTOS_queue.o), (112 bytes).
+	Removing .text.uxQueueMessagesWaiting(Obj/FreeRTOS_queue.o), (44 bytes).
+	Removing .text.uxQueueSpacesAvailable(Obj/FreeRTOS_queue.o), (48 bytes).
+	Removing .text.uxQueueMessagesWaitingFromISR(Obj/FreeRTOS_queue.o), (32 bytes).
+	Removing .text.vQueueDelete(Obj/FreeRTOS_queue.o), (44 bytes).
+	Removing .text.uxQueueGetQueueNumber(Obj/FreeRTOS_queue.o), (4 bytes).
+	Removing .text.vQueueSetQueueNumber(Obj/FreeRTOS_queue.o), (4 bytes).
+	Removing .text.ucQueueGetQueueType(Obj/FreeRTOS_queue.o), (6 bytes).
+	Removing .text.xQueueIsQueueEmptyFromISR(Obj/FreeRTOS_queue.o), (36 bytes).
+	Removing .text.xQueueIsQueueFullFromISR(Obj/FreeRTOS_queue.o), (40 bytes).
+	Removing .text.vQueueWaitForMessageRestricted(Obj/FreeRTOS_queue.o), (78 bytes).
+	Removing .rodata.xQueueGenericReset.str1.4(Obj/FreeRTOS_queue.o), (57 bytes).
+	Removing .debug_info(Obj/FreeRTOS_queue.o), (6056 bytes).
+	Removing .debug_abbrev(Obj/FreeRTOS_queue.o), (855 bytes).
+	Removing .debug_loc(Obj/FreeRTOS_queue.o), (7125 bytes).
+	Removing .debug_aranges(Obj/FreeRTOS_queue.o), (264 bytes).
+	Removing .debug_ranges(Obj/FreeRTOS_queue.o), (848 bytes).
+	Removing .debug_macinfo(Obj/FreeRTOS_queue.o), (47669 bytes).
+	Removing .debug_line(Obj/FreeRTOS_queue.o), (2675 bytes).
+	Removing .debug_str(Obj/FreeRTOS_queue.o), (2564 bytes).
+	Removing .comment(Obj/FreeRTOS_queue.o), (67 bytes).
+	Removing .debug_frame(Obj/FreeRTOS_queue.o), (928 bytes).
+	Removing .csky.attributes(Obj/FreeRTOS_queue.o), (56 bytes).
+	Removing .text(Obj/FreeRTOS_stream_buffer.o), (0 bytes).
+	Removing .data(Obj/FreeRTOS_stream_buffer.o), (0 bytes).
+	Removing .bss(Obj/FreeRTOS_stream_buffer.o), (0 bytes).
+	Removing .text.prvInitialiseNewStreamBuffer(Obj/FreeRTOS_stream_buffer.o), (72 bytes).
+	Removing .text.prvWriteBytesToBuffer(Obj/FreeRTOS_stream_buffer.o), (128 bytes).
+	Removing .text.prvWriteMessageToBuffer(Obj/FreeRTOS_stream_buffer.o), (74 bytes).
+	Removing .text.prvReadBytesFromBuffer(Obj/FreeRTOS_stream_buffer.o), (136 bytes).
+	Removing .text.xStreamBufferGenericCreate(Obj/FreeRTOS_stream_buffer.o), (116 bytes).
+	Removing .text.xStreamBufferGenericCreateStatic(Obj/FreeRTOS_stream_buffer.o), (160 bytes).
+	Removing .text.vStreamBufferDelete(Obj/FreeRTOS_stream_buffer.o), (56 bytes).
+	Removing .text.xStreamBufferReset(Obj/FreeRTOS_stream_buffer.o), (104 bytes).
+	Removing .text.xStreamBufferSetTriggerLevel(Obj/FreeRTOS_stream_buffer.o), (52 bytes).
+	Removing .text.xStreamBufferSpacesAvailable(Obj/FreeRTOS_stream_buffer.o), (52 bytes).
+	Removing .text.xStreamBufferBytesAvailable(Obj/FreeRTOS_stream_buffer.o), (48 bytes).
+	Removing .text.xStreamBufferSend(Obj/FreeRTOS_stream_buffer.o), (304 bytes).
+	Removing .text.xStreamBufferSendFromISR(Obj/FreeRTOS_stream_buffer.o), (200 bytes).
+	Removing .text.xStreamBufferReceive(Obj/FreeRTOS_stream_buffer.o), (312 bytes).
+	Removing .text.xStreamBufferNextMessageLengthBytes(Obj/FreeRTOS_stream_buffer.o), (108 bytes).
+	Removing .text.xStreamBufferReceiveFromISR(Obj/FreeRTOS_stream_buffer.o), (204 bytes).
+	Removing .text.xStreamBufferIsEmpty(Obj/FreeRTOS_stream_buffer.o), (40 bytes).
+	Removing .text.xStreamBufferIsFull(Obj/FreeRTOS_stream_buffer.o), (56 bytes).
+	Removing .text.xStreamBufferSendCompletedFromISR(Obj/FreeRTOS_stream_buffer.o), (76 bytes).
+	Removing .text.xStreamBufferReceiveCompletedFromISR(Obj/FreeRTOS_stream_buffer.o), (76 bytes).
+	Removing .text.uxStreamBufferGetStreamBufferNumber(Obj/FreeRTOS_stream_buffer.o), (4 bytes).
+	Removing .text.vStreamBufferSetStreamBufferNumber(Obj/FreeRTOS_stream_buffer.o), (4 bytes).
+	Removing .text.ucStreamBufferGetStreamBufferType(Obj/FreeRTOS_stream_buffer.o), (8 bytes).
+	Removing .rodata.prvInitialiseNewStreamBuffer.str1.4(Obj/FreeRTOS_stream_buffer.o), (65 bytes).
+	Removing .debug_info(Obj/FreeRTOS_stream_buffer.o), (4632 bytes).
+	Removing .debug_abbrev(Obj/FreeRTOS_stream_buffer.o), (799 bytes).
+	Removing .debug_loc(Obj/FreeRTOS_stream_buffer.o), (6477 bytes).
+	Removing .debug_aranges(Obj/FreeRTOS_stream_buffer.o), (208 bytes).
+	Removing .debug_ranges(Obj/FreeRTOS_stream_buffer.o), (312 bytes).
+	Removing .debug_macinfo(Obj/FreeRTOS_stream_buffer.o), (47392 bytes).
+	Removing .debug_line(Obj/FreeRTOS_stream_buffer.o), (1998 bytes).
+	Removing .debug_str(Obj/FreeRTOS_stream_buffer.o), (2141 bytes).
+	Removing .comment(Obj/FreeRTOS_stream_buffer.o), (67 bytes).
+	Removing .debug_frame(Obj/FreeRTOS_stream_buffer.o), (768 bytes).
+	Removing .csky.attributes(Obj/FreeRTOS_stream_buffer.o), (56 bytes).
+	Removing .text(Obj/FreeRTOS_tasks.o), (0 bytes).
+	Removing .data(Obj/FreeRTOS_tasks.o), (0 bytes).
+	Removing .bss(Obj/FreeRTOS_tasks.o), (0 bytes).
+	Removing .text.prvAddNewTaskToReadyList(Obj/FreeRTOS_tasks.o), (260 bytes).
+	Removing .text.prvResetNextTaskUnblockTime.part.0(Obj/FreeRTOS_tasks.o), (24 bytes).
+	Removing .text.prvInitialiseNewTask.isra.2(Obj/FreeRTOS_tasks.o), (176 bytes).
+	Removing .text.prvDeleteTCB(Obj/FreeRTOS_tasks.o), (64 bytes).
+	Removing .text.prvIdleTask(Obj/FreeRTOS_tasks.o), (92 bytes).
+	Removing .text.prvAddCurrentTaskToDelayedList(Obj/FreeRTOS_tasks.o), (116 bytes).
+	Removing .text.xTaskIncrementTick.part.6(Obj/FreeRTOS_tasks.o), (316 bytes).
+	Removing .text.xTaskCreateStatic(Obj/FreeRTOS_tasks.o), (132 bytes).
+	Removing .text.xTaskCreate(Obj/FreeRTOS_tasks.o), (106 bytes).
+	Removing .text.vTaskDelete(Obj/FreeRTOS_tasks.o), (204 bytes).
+	Removing .text.eTaskGetState(Obj/FreeRTOS_tasks.o), (140 bytes).
+	Removing .text.uxTaskPriorityGet(Obj/FreeRTOS_tasks.o), (40 bytes).
+	Removing .text.uxTaskPriorityGetFromISR(Obj/FreeRTOS_tasks.o), (36 bytes).
+	Removing .text.vTaskPrioritySet(Obj/FreeRTOS_tasks.o), (200 bytes).
+	Removing .text.vTaskResume(Obj/FreeRTOS_tasks.o), (144 bytes).
+	Removing .text.xTaskResumeFromISR(Obj/FreeRTOS_tasks.o), (172 bytes).
+	Removing .text.vTaskStartScheduler(Obj/FreeRTOS_tasks.o), (132 bytes).
+	Removing .text.vTaskEndScheduler(Obj/FreeRTOS_tasks.o), (24 bytes).
+	Removing .text.vTaskSuspendAll(Obj/FreeRTOS_tasks.o), (16 bytes).
+	Removing .text.xTaskResumeAll(Obj/FreeRTOS_tasks.o), (324 bytes).
+	Removing .text.vTaskDelayUntil(Obj/FreeRTOS_tasks.o), (144 bytes).
+	Removing .text.vTaskDelay(Obj/FreeRTOS_tasks.o), (72 bytes).
+	Removing .text.xTaskGetTickCount(Obj/FreeRTOS_tasks.o), (12 bytes).
+	Removing .text.xTaskGetTickCountFromISR(Obj/FreeRTOS_tasks.o), (12 bytes).
+	Removing .text.uxTaskGetNumberOfTasks(Obj/FreeRTOS_tasks.o), (12 bytes).
+	Removing .text.pcTaskGetName(Obj/FreeRTOS_tasks.o), (44 bytes).
+	Removing .text.xTaskCatchUpTicks(Obj/FreeRTOS_tasks.o), (60 bytes).
+	Removing .text.xTaskIncrementTick(Obj/FreeRTOS_tasks.o), (36 bytes).
+	Removing .text.vTaskSuspend(Obj/FreeRTOS_tasks.o), (212 bytes).
+	Removing .text.vTaskPlaceOnEventList(Obj/FreeRTOS_tasks.o), (56 bytes).
+	Removing .text.vTaskPlaceOnUnorderedEventList(Obj/FreeRTOS_tasks.o), (92 bytes).
+	Removing .text.vTaskPlaceOnEventListRestricted(Obj/FreeRTOS_tasks.o), (64 bytes).
+	Removing .text.xTaskRemoveFromEventList(Obj/FreeRTOS_tasks.o), (144 bytes).
+	Removing .text.vTaskRemoveFromUnorderedEventList(Obj/FreeRTOS_tasks.o), (136 bytes).
+	Removing .text.vTaskSetTimeOutState(Obj/FreeRTOS_tasks.o), (60 bytes).
+	Removing .text.vTaskInternalSetTimeOutState(Obj/FreeRTOS_tasks.o), (24 bytes).
+	Removing .text.xTaskCheckForTimeOut(Obj/FreeRTOS_tasks.o), (172 bytes).
+	Removing .text.vTaskMissedYield(Obj/FreeRTOS_tasks.o), (12 bytes).
+	Removing .text.uxTaskGetTaskNumber(Obj/FreeRTOS_tasks.o), (8 bytes).
+	Removing .text.vTaskSetTaskNumber(Obj/FreeRTOS_tasks.o), (8 bytes).
+	Removing .text.vTaskGetInfo(Obj/FreeRTOS_tasks.o), (176 bytes).
+	Removing .text.prvListTasksWithinSingleList.part.8(Obj/FreeRTOS_tasks.o), (78 bytes).
+	Removing .text.uxTaskGetSystemState(Obj/FreeRTOS_tasks.o), (252 bytes).
+	Removing .text.xTaskGetCurrentTaskHandle(Obj/FreeRTOS_tasks.o), (12 bytes).
+	Removing .text.xTaskGetSchedulerState(Obj/FreeRTOS_tasks.o), (32 bytes).
+	Removing .text.xTaskPriorityInherit(Obj/FreeRTOS_tasks.o), (132 bytes).
+	Removing .text.xTaskPriorityDisinherit(Obj/FreeRTOS_tasks.o), (136 bytes).
+	Removing .text.vTaskPriorityDisinheritAfterTimeout(Obj/FreeRTOS_tasks.o), (156 bytes).
+	Removing .text.vTaskList(Obj/FreeRTOS_tasks.o), (196 bytes).
+	Removing .text.uxTaskResetEventItemValue(Obj/FreeRTOS_tasks.o), (24 bytes).
+	Removing .text.pvTaskIncrementMutexHeldCount(Obj/FreeRTOS_tasks.o), (24 bytes).
+	Removing .text.ulTaskGenericNotifyTake(Obj/FreeRTOS_tasks.o), (128 bytes).
+	Removing .text.xTaskGenericNotifyWait(Obj/FreeRTOS_tasks.o), (156 bytes).
+	Removing .text.xTaskGenericNotify(Obj/FreeRTOS_tasks.o), (260 bytes).
+	Removing .rodata.xTaskGenericNotify(Obj/FreeRTOS_tasks.o), (20 bytes).
+	Removing .text.xTaskGenericNotifyFromISR(Obj/FreeRTOS_tasks.o), (304 bytes).
+	Removing .rodata.xTaskGenericNotifyFromISR(Obj/FreeRTOS_tasks.o), (20 bytes).
+	Removing .text.vTaskGenericNotifyGiveFromISR(Obj/FreeRTOS_tasks.o), (216 bytes).
+	Removing .text.xTaskGenericNotifyStateClear(Obj/FreeRTOS_tasks.o), (84 bytes).
+	Removing .text.ulTaskGenericNotifyValueClear(Obj/FreeRTOS_tasks.o), (48 bytes).
+	Removing .bss.pxDelayedTaskList(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .bss.pxOverflowDelayedTaskList(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .bss.uxCurrentNumberOfTasks(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .bss.uxDeletedTasksWaitingCleanUp(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .bss.uxTaskNumber(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .bss.xDelayedTaskList1(Obj/FreeRTOS_tasks.o), (20 bytes).
+	Removing .bss.xDelayedTaskList2(Obj/FreeRTOS_tasks.o), (20 bytes).
+	Removing .bss.xNextTaskUnblockTime(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .bss.xNumOfOverflows(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .bss.xPendedTicks(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .bss.xPendingReadyList(Obj/FreeRTOS_tasks.o), (20 bytes).
+	Removing .bss.xSchedulerRunning(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .bss.xSuspendedTaskList(Obj/FreeRTOS_tasks.o), (20 bytes).
+	Removing .bss.xTasksWaitingTermination(Obj/FreeRTOS_tasks.o), (20 bytes).
+	Removing .bss.xTickCount(Obj/FreeRTOS_tasks.o), (4 bytes).
+	Removing .rodata.CSWTCH.212(Obj/FreeRTOS_tasks.o), (5 bytes).
+	Removing .rodata.vTaskList.str1.4(Obj/FreeRTOS_tasks.o), (15 bytes).
+	Removing .rodata.vTaskStartScheduler.str1.4(Obj/FreeRTOS_tasks.o), (5 bytes).
+	Removing .text(Obj/FreeRTOS_timers.o), (0 bytes).
+	Removing .data(Obj/FreeRTOS_timers.o), (0 bytes).
+	Removing .bss(Obj/FreeRTOS_timers.o), (0 bytes).
+	Removing .text.prvCheckForValidListAndQueue(Obj/FreeRTOS_timers.o), (100 bytes).
+	Removing .text.prvInsertTimerInActiveList(Obj/FreeRTOS_timers.o), (68 bytes).
+	Removing .text.xTimerCreateTimerTask(Obj/FreeRTOS_timers.o), (108 bytes).
+	Removing .text.xTimerCreate(Obj/FreeRTOS_timers.o), (100 bytes).
+	Removing .text.xTimerCreateStatic(Obj/FreeRTOS_timers.o), (144 bytes).
+	Removing .text.xTimerGenericCommand(Obj/FreeRTOS_timers.o), (116 bytes).
+	Removing .text.prvSwitchTimerLists(Obj/FreeRTOS_timers.o), (136 bytes).
+	Removing .text.prvTimerTask(Obj/FreeRTOS_timers.o), (512 bytes).
+	Removing .rodata.prvTimerTask(Obj/FreeRTOS_timers.o), (40 bytes).
+	Removing .text.xTimerGetTimerDaemonTaskHandle(Obj/FreeRTOS_timers.o), (40 bytes).
+	Removing .text.xTimerGetPeriod(Obj/FreeRTOS_timers.o), (32 bytes).
+	Removing .text.vTimerSetReloadMode(Obj/FreeRTOS_timers.o), (72 bytes).
+	Removing .text.uxTimerGetReloadMode(Obj/FreeRTOS_timers.o), (52 bytes).
+	Removing .text.xTimerGetExpiryTime(Obj/FreeRTOS_timers.o), (32 bytes).
+	Removing .text.pcTimerGetName(Obj/FreeRTOS_timers.o), (32 bytes).
+	Removing .text.xTimerIsTimerActive(Obj/FreeRTOS_timers.o), (52 bytes).
+	Removing .text.pvTimerGetTimerID(Obj/FreeRTOS_timers.o), (44 bytes).
+	Removing .text.vTimerSetTimerID(Obj/FreeRTOS_timers.o), (44 bytes).
+	Removing .text.uxTimerGetTimerNumber(Obj/FreeRTOS_timers.o), (4 bytes).
+	Removing .text.vTimerSetTimerNumber(Obj/FreeRTOS_timers.o), (4 bytes).
+	Removing .bss.pxCurrentTimerList(Obj/FreeRTOS_timers.o), (4 bytes).
+	Removing .bss.pxOverflowTimerList(Obj/FreeRTOS_timers.o), (4 bytes).
+	Removing .bss.ucStaticTimerQueueStorage.5708(Obj/FreeRTOS_timers.o), (1536 bytes).
+	Removing .bss.xActiveTimerList1(Obj/FreeRTOS_timers.o), (20 bytes).
+	Removing .bss.xActiveTimerList2(Obj/FreeRTOS_timers.o), (20 bytes).
+	Removing .bss.xLastTime.5659(Obj/FreeRTOS_timers.o), (4 bytes).
+	Removing .bss.xStaticTimerQueue.5707(Obj/FreeRTOS_timers.o), (80 bytes).
+	Removing .bss.xTimerQueue(Obj/FreeRTOS_timers.o), (4 bytes).
+	Removing .bss.xTimerTaskHandle(Obj/FreeRTOS_timers.o), (4 bytes).
+	Removing .rodata.xTimerCreateTimerTask.str1.4(Obj/FreeRTOS_timers.o), (72 bytes).
+	Removing .debug_info(Obj/FreeRTOS_timers.o), (4584 bytes).
+	Removing .debug_abbrev(Obj/FreeRTOS_timers.o), (782 bytes).
+	Removing .debug_loc(Obj/FreeRTOS_timers.o), (3057 bytes).
+	Removing .debug_aranges(Obj/FreeRTOS_timers.o), (176 bytes).
+	Removing .debug_ranges(Obj/FreeRTOS_timers.o), (448 bytes).
+	Removing .debug_macinfo(Obj/FreeRTOS_timers.o), (47095 bytes).
+	Removing .debug_line(Obj/FreeRTOS_timers.o), (1503 bytes).
+	Removing .debug_str(Obj/FreeRTOS_timers.o), (2481 bytes).
+	Removing .comment(Obj/FreeRTOS_timers.o), (67 bytes).
+	Removing .debug_frame(Obj/FreeRTOS_timers.o), (588 bytes).
+	Removing .csky.attributes(Obj/FreeRTOS_timers.o), (56 bytes).
+	Removing .data(Obj/xt804_cpu_task_sw.o), (0 bytes).
+	Removing .bss(Obj/xt804_cpu_task_sw.o), (0 bytes).
+	Removing .text(Obj/xt804_port.o), (0 bytes).
+	Removing .data(Obj/xt804_port.o), (0 bytes).
+	Removing .bss(Obj/xt804_port.o), (0 bytes).
+	Removing .text.xPortSysTickHandler(Obj/xt804_port.o), (28 bytes).
+	Removing .text.pxPortInitialiseStack(Obj/xt804_port.o), (484 bytes).
+	Removing .text.xPortStartScheduler(Obj/xt804_port.o), (20 bytes).
+	Removing .text.vPortEndScheduler(Obj/xt804_port.o), (2 bytes).
+	Removing .text.vPortYield(Obj/xt804_port.o), (2 bytes).
+	Removing .text.cpu_intrpt_save(Obj/xt804_port.o), (20 bytes).
+	Removing .text.vPortEnterCritical(Obj/xt804_port.o), (8 bytes).
+	Removing .text.vPortExitCritical(Obj/xt804_port.o), (40 bytes).
+	Removing .text.cpu_intrpt_restore(Obj/xt804_port.o), (32 bytes).
+	Removing .text.vApplicationStackOverflowHook(Obj/xt804_port.o), (16 bytes).
+	Removing .text.vApplicationGetIdleTaskMemory(Obj/xt804_port.o), (24 bytes).
+	Removing .text.vApplicationGetTimerTaskMemory(Obj/xt804_port.o), (24 bytes).
+	Removing .bss.ulLastTaskPrio(Obj/xt804_port.o), (4 bytes).
+	Removing .bss.uxIdleTaskStack.5358(Obj/xt804_port.o), (1024 bytes).
+	Removing .bss.uxTimerTaskStack.5365(Obj/xt804_port.o), (2048 bytes).
+	Removing .bss.xIdleTaskTCB.5357(Obj/xt804_port.o), (88 bytes).
+	Removing .bss.xTimerTaskTCB.5364(Obj/xt804_port.o), (88 bytes).
+	Removing .data.ulCriticalNesting(Obj/xt804_port.o), (4 bytes).
+	Removing .data.uxCriticalNesting(Obj/xt804_port.o), (4 bytes).
+	Removing .rodata.vApplicationStackOverflowHook.str1.4(Obj/xt804_port.o), (40 bytes).
+	Removing .debug_info(Obj/xt804_port.o), (1643 bytes).
+	Removing .debug_abbrev(Obj/xt804_port.o), (607 bytes).
+	Removing .debug_loc(Obj/xt804_port.o), (643 bytes).
+	Removing .debug_aranges(Obj/xt804_port.o), (104 bytes).
+	Removing .debug_ranges(Obj/xt804_port.o), (88 bytes).
+	Removing .debug_macinfo(Obj/xt804_port.o), (42657 bytes).
+	Removing .debug_line(Obj/xt804_port.o), (1023 bytes).
+	Removing .debug_str(Obj/xt804_port.o), (1371 bytes).
+	Removing .comment(Obj/xt804_port.o), (67 bytes).
+	Removing .debug_frame(Obj/xt804_port.o), (240 bytes).
+	Removing .csky.attributes(Obj/xt804_port.o), (56 bytes).
+	Removing .text(Obj/MemMang_heap_5.o), (0 bytes).
+	Removing .data(Obj/MemMang_heap_5.o), (0 bytes).
+	Removing .bss(Obj/MemMang_heap_5.o), (0 bytes).
+	Removing .text.prvInsertBlockIntoFreeList(Obj/MemMang_heap_5.o), (92 bytes).
+	Removing .text.pvPortMalloc(Obj/MemMang_heap_5.o), (228 bytes).
+	Removing .text.vPortFree(Obj/MemMang_heap_5.o), (116 bytes).
+	Removing .text.xPortGetFreeHeapSize(Obj/MemMang_heap_5.o), (12 bytes).
+	Removing .text.xPortGetMinimumEverFreeHeapSize(Obj/MemMang_heap_5.o), (12 bytes).
+	Removing .text.vPortDefineHeapRegions(Obj/MemMang_heap_5.o), (332 bytes).
+	Removing .text.vPortGetHeapStats(Obj/MemMang_heap_5.o), (132 bytes).
+	Removing .bss.pxEnd(Obj/MemMang_heap_5.o), (4 bytes).
+	Removing .bss.xBlockAllocatedBit(Obj/MemMang_heap_5.o), (4 bytes).
+	Removing .bss.xFreeBytesRemaining(Obj/MemMang_heap_5.o), (4 bytes).
+	Removing .bss.xMinimumEverFreeBytesRemaining(Obj/MemMang_heap_5.o), (4 bytes).
+	Removing .bss.xNumberOfSuccessfulAllocations(Obj/MemMang_heap_5.o), (4 bytes).
+	Removing .bss.xNumberOfSuccessfulFrees(Obj/MemMang_heap_5.o), (4 bytes).
+	Removing .bss.xStart(Obj/MemMang_heap_5.o), (8 bytes).
+	Removing .rodata.pvPortMalloc.str1.4(Obj/MemMang_heap_5.o), (77 bytes).
+	Removing .debug_info(Obj/MemMang_heap_5.o), (1232 bytes).
+	Removing .debug_abbrev(Obj/MemMang_heap_5.o), (390 bytes).
+	Removing .debug_loc(Obj/MemMang_heap_5.o), (1025 bytes).
+	Removing .debug_aranges(Obj/MemMang_heap_5.o), (80 bytes).
+	Removing .debug_ranges(Obj/MemMang_heap_5.o), (64 bytes).
+	Removing .debug_macinfo(Obj/MemMang_heap_5.o), (42870 bytes).
+	Removing .debug_line(Obj/MemMang_heap_5.o), (1146 bytes).
+	Removing .debug_str(Obj/MemMang_heap_5.o), (1258 bytes).
+	Removing .comment(Obj/MemMang_heap_5.o), (67 bytes).
+	Removing .debug_frame(Obj/MemMang_heap_5.o), (180 bytes).
+	Removing .csky.attributes(Obj/MemMang_heap_5.o), (56 bytes).
+	Removing .data(_fixunsdfsi.o), (0 bytes).
+	Removing .bss(_fixunsdfsi.o), (0 bytes).
+	Removing .data(_udivdi3.o), (0 bytes).
+	Removing .bss(_udivdi3.o), (0 bytes).
+	Removing .data(_umoddi3.o), (0 bytes).
+	Removing .bss(_umoddi3.o), (0 bytes).
+	Removing .data(_sf_to_df.o), (0 bytes).
+	Removing .bss(_sf_to_df.o), (0 bytes).
+	Removing .data(_addsub_df.o), (0 bytes).
+	Removing .bss(_addsub_df.o), (0 bytes).
+	Removing .data(_mul_df.o), (0 bytes).
+	Removing .bss(_mul_df.o), (0 bytes).
+	Removing .data(_div_df.o), (0 bytes).
+	Removing .bss(_div_df.o), (0 bytes).
+	Removing .data(_ne_df.o), (0 bytes).
+	Removing .bss(_ne_df.o), (0 bytes).
+	Removing .data(_gt_df.o), (0 bytes).
+	Removing .bss(_gt_df.o), (0 bytes).
+	Removing .data(_ge_df.o), (0 bytes).
+	Removing .bss(_ge_df.o), (0 bytes).
+	Removing .data(_lt_df.o), (0 bytes).
+	Removing .bss(_lt_df.o), (0 bytes).
+	Removing .data(_si_to_df.o), (0 bytes).
+	Removing .bss(_si_to_df.o), (0 bytes).
+	Removing .data(_df_to_si.o), (0 bytes).
+	Removing .bss(_df_to_si.o), (0 bytes).
+	Removing .data(_make_df.o), (0 bytes).
+	Removing .bss(_make_df.o), (0 bytes).
+	Removing .data(_df_to_sf.o), (0 bytes).
+	Removing .bss(_df_to_sf.o), (0 bytes).
+	Removing .text(_thenan_df.o), (0 bytes).
+	Removing .data(_thenan_df.o), (0 bytes).
+	Removing .bss(_thenan_df.o), (0 bytes).
+	Removing .data(_usi_to_df.o), (0 bytes).
+	Removing .bss(_usi_to_df.o), (0 bytes).
+	Removing .data(_muldi3.o), (0 bytes).
+	Removing .bss(_muldi3.o), (0 bytes).
+	Removing .text(_clz.o), (0 bytes).
+	Removing .data(_clz.o), (0 bytes).
+	Removing .bss(_clz.o), (0 bytes).
+	Removing .data(_unpack_sf.o), (0 bytes).
+	Removing .bss(_unpack_sf.o), (0 bytes).
+	Removing .data(_make_sf.o), (0 bytes).
+	Removing .bss(_make_sf.o), (0 bytes).
+	Removing .data(_pack_df.o), (0 bytes).
+	Removing .bss(_pack_df.o), (0 bytes).
+	Removing .data(_unpack_df.o), (0 bytes).
+	Removing .bss(_unpack_df.o), (0 bytes).
+	Removing .data(_fpcmp_parts_df.o), (0 bytes).
+	Removing .bss(_fpcmp_parts_df.o), (0 bytes).
+	Removing .data(_pack_sf.o), (0 bytes).
+	Removing .bss(_pack_sf.o), (0 bytes).
+	Removing .text(isspace.o), (20 bytes).
+	Removing .data(isspace.o), (0 bytes).
+	Removing .bss(isspace.o), (0 bytes).
+	Removing .csky.attributes(isspace.o), (50 bytes).
+	Removing .data(putchar.o), (0 bytes).
+	Removing .bss(putchar.o), (0 bytes).
+	Removing .data(puts.o), (0 bytes).
+	Removing .bss(puts.o), (0 bytes).
+	Removing .text(stdinit.o), (0 bytes).
+	Removing .bss(stdinit.o), (0 bytes).
+	Removing .data(fputs.o), (0 bytes).
+	Removing .bss(fputs.o), (0 bytes).
+	Removing .text(strtod.o), (612 bytes).
+	Removing .data(strtod.o), (0 bytes).
+	Removing .bss(strtod.o), (0 bytes).
+	Removing .rodata(strtod.o), (40 bytes).
+	Removing .comment(strtod.o), (67 bytes).
+	Removing .csky.attributes(strtod.o), (52 bytes).
+	Removing .text(strtof.o), (12 bytes).
+	Removing .data(strtof.o), (0 bytes).
+	Removing .bss(strtof.o), (0 bytes).
+	Removing .comment(strtof.o), (67 bytes).
+	Removing .csky.attributes(strtof.o), (52 bytes).
+	Removing .text(memset_fast.o), (160 bytes).
+	Removing .data(memset_fast.o), (0 bytes).
+	Removing .bss(memset_fast.o), (0 bytes).
+	Removing .csky.attributes(memset_fast.o), (50 bytes).
+	Removing .data(strlen_fast.o), (0 bytes).
+	Removing .bss(strlen_fast.o), (0 bytes).
+	Removing .text(strcpy_fast.o), (202 bytes).
+	Removing .data(strcpy_fast.o), (0 bytes).
+	Removing .bss(strcpy_fast.o), (0 bytes).
+	Removing .csky.attributes(strcpy_fast.o), (50 bytes).
+	Removing .data(memcpy_fast.o), (0 bytes).
+	Removing .bss(memcpy_fast.o), (0 bytes).
+	Removing .text(isdigit.o), (8 bytes).
+	Removing .data(isdigit.o), (0 bytes).
+	Removing .bss(isdigit.o), (0 bytes).
+	Removing .csky.attributes(isdigit.o), (50 bytes).
+	Removing .text(minilibc_init.o), (56 bytes).
+	Removing .data(minilibc_init.o), (0 bytes).
+	Removing .bss(minilibc_init.o), (0 bytes).
+	Removing .comment(minilibc_init.o), (67 bytes).
+	Removing .csky.attributes(minilibc_init.o), (52 bytes).
+	Removing COMMON(minilibc_init.o), (8 bytes).
+	Removing .data(critical.o), (0 bytes).
+	Removing .bss(critical.o), (0 bytes).
+	Removing .data(putc.o), (0 bytes).
+	Removing .bss(putc.o), (0 bytes).
+	Removing .text(abs.o), (6 bytes).
+	Removing .data(abs.o), (0 bytes).
+	Removing .bss(abs.o), (0 bytes).
+	Removing .csky.attributes(abs.o), (50 bytes).
+	Removing .text(_eq_df.o), (56 bytes).
+	Removing .data(_eq_df.o), (0 bytes).
+	Removing .bss(_eq_df.o), (0 bytes).
+	Removing .comment(_eq_df.o), (67 bytes).
+	Removing .csky.attributes(_eq_df.o), (52 bytes).
+
+816 unused seciton(s) (total 1781286 bytes) removed from the image.
+
+======================================================================
+
+Image Symbol Table 
+
+	Local Symbols
+
+	Symbol Name                        Value        Type   Size  Section
+	Obj/FreeRTOS_tasks.o               0x00000000     df        0  *ABS*
+	Obj/bsp_board_init.o               0x00000000     df        0  *ABS*
+	Obj/bsp_startup.o                  0x00000000     df        0  *ABS*
+	Obj/bsp_system.o                   0x00000000     df        0  *ABS*
+	Obj/bsp_trap_c.o                   0x00000000     df        0  *ABS*
+	Obj/bsp_vectors.o                  0x00000000     df        0  *ABS*
+	Obj/drivers_wm_adc.o               0x00000000     df        0  *ABS*
+	Obj/drivers_wm_cpu.o               0x00000000     df        0  *ABS*
+	Obj/drivers_wm_gpio.o              0x00000000     df        0  *ABS*
+	Obj/drivers_wm_hal.o               0x00000000     df        0  *ABS*
+	Obj/drivers_wm_i2c.o               0x00000000     df        0  *ABS*
+	Obj/drivers_wm_internal_flash.o    0x00000000     df        0  *ABS*
+	Obj/drivers_wm_tim.o               0x00000000     df        0  *ABS*
+	Obj/libc_libc_port.o               0x00000000     df        0  *ABS*
+	Obj/src_adc.o                      0x00000000     df        0  *ABS*
+	Obj/src_gpio.o                     0x00000000     df        0  *ABS*
+	Obj/src_iic.o                      0x00000000     df        0  *ABS*
+	Obj/src_ina226.o                   0x00000000     df        0  *ABS*
+	Obj/src_main.o                     0x00000000     df        0  *ABS*
+	Obj/src_oled.o                     0x00000000     df        0  *ABS*
+	Obj/src_timer.o                    0x00000000     df        0  *ABS*
+	Obj/src_wm_hal_msp.o               0x00000000     df        0  *ABS*
+	Obj/src_wm_it.o                    0x00000000     df        0  *ABS*
+	Obj/xt804_cpu_task_sw.o            0x00000000     df        0  *ABS*
+	_addsub_df.o                       0x00000000     df        0  *ABS*
+	_df_to_sf.o                        0x00000000     df        0  *ABS*
+	_df_to_si.o                        0x00000000     df        0  *ABS*
+	_div_df.o                          0x00000000     df        0  *ABS*
+	_fixunsdfsi.o                      0x00000000     df        0  *ABS*
+	_fpcmp_parts_df.o                  0x00000000     df        0  *ABS*
+	_ge_df.o                           0x00000000     df        0  *ABS*
+	_gt_df.o                           0x00000000     df        0  *ABS*
+	_lt_df.o                           0x00000000     df        0  *ABS*
+	_make_df.o                         0x00000000     df        0  *ABS*
+	_make_sf.o                         0x00000000     df        0  *ABS*
+	_mul_df.o                          0x00000000     df        0  *ABS*
+	_muldi3.o                          0x00000000     df        0  *ABS*
+	_ne_df.o                           0x00000000     df        0  *ABS*
+	_pack_df.o                         0x00000000     df        0  *ABS*
+	_pack_sf.o                         0x00000000     df        0  *ABS*
+	_sf_to_df.o                        0x00000000     df        0  *ABS*
+	_si_to_df.o                        0x00000000     df        0  *ABS*
+	_udivdi3.o                         0x00000000     df        0  *ABS*
+	_umoddi3.o                         0x00000000     df        0  *ABS*
+	_unpack_df.o                       0x00000000     df        0  *ABS*
+	_unpack_sf.o                       0x00000000     df        0  *ABS*
+	_usi_to_df.o                       0x00000000     df        0  *ABS*
+	critical.o                         0x00000000     df        0  *ABS*
+	fputs.o                            0x00000000     df        0  *ABS*
+	memcpy_fast.o                      0x00000000     df        0  *ABS*
+	putc.o                             0x00000000     df        0  *ABS*
+	putchar.o                          0x00000000     df        0  *ABS*
+	puts.o                             0x00000000     df        0  *ABS*
+	stdinit.o                          0x00000000     df        0  *ABS*
+	strlen_fast.o                      0x00000000     df        0  *ABS*
+	$d                                 0x08010500               0  .text
+	$t                                 0x08010500               0  .text
+	_start                             0x08010500               0  .text
+	__exit                             0x08010560               0  .text
+	$d                                 0x08010562               0  .text
+	$t                                 0x0801058c               0  .text
+	$d                                 0x080105d2               0  .text
+	$t                                 0x080105dc               0  .text
+	$d                                 0x08010674               0  .text
+	$d                                 0x0801067c               0  .text
+	$t                                 0x0801067c               0  .text
+	$d                                 0x080106b4               0  .text
+	$t                                 0x080106b4               0  .text
+	$d                                 0x080109e2               0  .text
+	$d                                 0x080109e8               0  .text
+	$t                                 0x080109e8               0  .text
+	$d                                 0x08010d08               0  .text
+	$d                                 0x08010d0c               0  .text
+	$t                                 0x08010d0c               0  .text
+	_fpadd_parts                       0x08010d38      F      706  .text
+	$d                                 0x08010d38               0  .text
+	$t                                 0x08010d38               0  .text
+	$d                                 0x08011064               0  .text
+	$d                                 0x08011068               0  .text
+	$t                                 0x08011068               0  .text
+	$d                                 0x08011264               0  .text
+	$d                                 0x08011268               0  .text
+	$t                                 0x08011268               0  .text
+	$d                                 0x0801137a               0  .text
+	$d                                 0x08011380               0  .text
+	$t                                 0x08011380               0  .text
+	$d                                 0x080113b8               0  .text
+	$t                                 0x080113b8               0  .text
+	$d                                 0x080113f8               0  .text
+	$t                                 0x080113f8               0  .text
+	$d                                 0x08011438               0  .text
+	$t                                 0x08011438               0  .text
+	$d                                 0x08011470               0  .text
+	$t                                 0x08011470               0  .text
+	$d                                 0x080114d8               0  .text
+	$t                                 0x080114d8               0  .text
+	$d                                 0x08011548               0  .text
+	$t                                 0x08011548               0  .text
+	$d                                 0x08011578               0  .text
+	$t                                 0x08011578               0  .text
+	$d                                 0x080115ac               0  .text
+	$t                                 0x080115ac               0  .text
+	$d                                 0x08011604               0  .text
+	$t                                 0x08011604               0  .text
+	$d                                 0x08011650               0  .text
+	$t                                 0x08011650               0  .text
+	$d                                 0x080116c8               0  .text
+	$d                                 0x080116cc               0  .text
+	$t                                 0x080116cc               0  .text
+	$d                                 0x080116e4               0  .text
+	$t                                 0x080116e4               0  .text
+	$d                                 0x08011874               0  .text
+	$t                                 0x08011874               0  .text
+	$d                                 0x08011958               0  .text
+	$t                                 0x08011958               0  .text
+	$d                                 0x08011a1c               0  .text
+	$t                                 0x08011a1c               0  .text
+	$d                                 0x08011adc               0  .text
+	$t                                 0x08011adc               0  .text
+	$d                                 0x08011ae8               0  .text
+	$d                                 0x08011aec               0  .text
+	$t                                 0x08011aec               0  .text
+	$d                                 0x08011b00               0  .text
+	$d                                 0x08011b04               0  .text
+	$t                                 0x08011b04               0  .text
+	$d                                 0x08011b50               0  .text
+	$t                                 0x08011b50               0  .text
+	$d                                 0x08011b90               0  .text
+	$t                                 0x08011b90               0  .text
+	$d                                 0x08011c10               0  .text
+	$t                                 0x08011c10               0  .text
+	$d                                 0x08011c20               0  .text
+	$t                                 0x08011c20               0  .text
+	$d                                 0x08011c28               0  .text
+	$t                                 0x08011c28               0  .text
+	$d                                 0x08011d26               0  .text
+	$d                                 0x08011d3c               0  .text
+	$t                                 0x08011d3c               0  .text
+	$d                                 0x08011e24               0  .text
+	$d                                 0x08011e3c               0  .text
+	$t                                 0x08011e3c               0  .text
+	$d                                 0x08011e7c               0  .text
+	$d                                 0x08011e80               0  .text
+	$t                                 0x08011e80               0  .text
+	$d                                 0x08011ec0               0  .text
+	$d                                 0x08011ec4               0  .text
+	$t                                 0x08011ec4               0  .text
+	$d                                 0x08011fbc               0  .text
+	$d                                 0x08011fd0               0  .text
+	$t                                 0x08011fd0               0  .text
+	$d                                 0x080120aa               0  .text
+	$d                                 0x080120c0               0  .text
+	$t                                 0x080120c0               0  .text
+	$d                                 0x080121cc               0  .text
+	$d                                 0x080121dc               0  .text
+	$t                                 0x080121dc               0  .text
+	$d                                 0x080121e0               0  .text
+	$t                                 0x080121e0               0  .text
+	$d                                 0x08012204               0  .text
+	$t                                 0x08012204               0  .text
+	$d                                 0x08012312               0  .text
+	$d                                 0x08012318               0  .text
+	$t                                 0x08012318               0  .text
+	$d                                 0x08012348               0  .text
+	$d                                 0x0801234c               0  .text
+	$t                                 0x0801234c               0  .text
+	$d                                 0x0801236c               0  .text
+	$t                                 0x0801236c               0  .text
+	$d                                 0x080123a8               0  .text
+	$d                                 0x080123ac               0  .text
+	$t                                 0x080123ac               0  .text
+	$d                                 0x080123e6               0  .text
+	$d                                 0x080123ec               0  .text
+	$t                                 0x080123ec               0  .text
+	$d                                 0x08012426               0  .text
+	$d                                 0x0801242c               0  .text
+	$t                                 0x0801242c               0  .text
+	$d                                 0x08012438               0  .text
+	$d                                 0x0801243c               0  .text
+	$t                                 0x0801243c               0  .text
+	$d                                 0x0801244a               0  .text
+	$t                                 0x08012450               0  .text
+	$d                                 0x080124a0               0  .text
+	$d                                 0x080124a8               0  .text
+	$t                                 0x080124a8               0  .text
+	$d                                 0x080124ac               0  .text
+	$t                                 0x080124ac               0  .text
+	$d                                 0x080124f0               0  .text
+	$d                                 0x080124f4               0  .text
+	$t                                 0x080124f4               0  .text
+	$d                                 0x0801251c               0  .text
+	$d                                 0x08012524               0  .text
+	$t                                 0x08012524               0  .text
+	$d                                 0x08012530               0  .text
+	$d                                 0x08012534               0  .text
+	$t                                 0x08012534               0  .text
+	$d                                 0x08012558               0  .text
+	$d                                 0x0801255c               0  .text
+	$t                                 0x0801255c               0  .text
+	$d                                 0x080125bc               0  .text
+	$d                                 0x080125d0               0  .text
+	$t                                 0x080125d0               0  .text
+	$d                                 0x08012640               0  .text
+	$d                                 0x08012644               0  .text
+	$t                                 0x08012644               0  .text
+	$d                                 0x08012694               0  .text
+	$d                                 0x08012698               0  .text
+	$t                                 0x08012698               0  .text
+	$d                                 0x08012752               0  .text
+	$d                                 0x08012760               0  .text
+	$t                                 0x08012760               0  .text
+	$d                                 0x0801279c               0  .text
+	$t                                 0x0801279c               0  .text
+	$d                                 0x080129d2               0  .text
+	$d                                 0x080129d8               0  .text
+	$t                                 0x080129d8               0  .text
+	$d                                 0x08012a10               0  .text
+	$d                                 0x08012a18               0  .text
+	$t                                 0x08012a18               0  .text
+	$d                                 0x08012a4e               0  .text
+	$d                                 0x08012a58               0  .text
+	$t                                 0x08012a58               0  .text
+	$d                                 0x08012a96               0  .text
+	$d                                 0x08012aa0               0  .text
+	$t                                 0x08012aa0               0  .text
+	$d                                 0x08012b1a               0  .text
+	$d                                 0x08012b20               0  .text
+	$t                                 0x08012b20               0  .text
+	$d                                 0x08012b8c               0  .text
+	$d                                 0x08012b90               0  .text
+	$t                                 0x08012b90               0  .text
+	$d                                 0x08012bc0               0  .text
+	$t                                 0x08012bc0               0  .text
+	$d                                 0x08012c94               0  .text
+	$d                                 0x08012c9c               0  .text
+	$t                                 0x08012c9c               0  .text
+	$d                                 0x08012ca0               0  .text
+	$t                                 0x08012ca0               0  .text
+	$d                                 0x08012ce8               0  .text
+	$t                                 0x08012ce8               0  .text
+	$d                                 0x08012d14               0  .text
+	$t                                 0x08012d14               0  .text
+	$d                                 0x08012d78               0  .text
+	$d                                 0x08012d84               0  .text
+	$t                                 0x08012d84               0  .text
+	$d                                 0x08012de4               0  .text
+	$t                                 0x08012de4               0  .text
+	$d                                 0x08012dee               0  .text
+	$d                                 0x08012df4               0  .text
+	$t                                 0x08012df4               0  .text
+	$d                                 0x08012dfa               0  .text
+	$d                                 0x08012e00               0  .text
+	$t                                 0x08012e00               0  .text
+	$d                                 0x08012e18               0  .text
+	$t                                 0x08012e18               0  .text
+	$d                                 0x08012e46               0  .text
+	$d                                 0x08012e4c               0  .text
+	$t                                 0x08012e4c               0  .text
+	$d                                 0x08012e66               0  .text
+	$d                                 0x08012e6c               0  .text
+	$t                                 0x08012e6c               0  .text
+	$d                                 0x08012ef4               0  .text
+	$t                                 0x08012ef8               0  .text
+	$d                                 0x08013020               0  .text
+	$t                                 0x08013020               0  .text
+	$d                                 0x0801302c               0  .text
+	$t                                 0x0801302c               0  .text
+	$d                                 0x08013054               0  .text
+	$t                                 0x08013054               0  .text
+	$d                                 0x08013070               0  .text
+	$t                                 0x08013070               0  .text
+	I2C_Start                          0x0801307c      F       70  .text
+	$d                                 0x0801307c               0  .text
+	$t                                 0x0801307c               0  .text
+	I2C_Write_Byte                     0x080130c4      F       84  .text
+	$d                                 0x080130c4               0  .text
+	$t                                 0x080130c4               0  .text
+	I2C_Stop                           0x08013118      F       52  .text
+	$d                                 0x08013118               0  .text
+	$t                                 0x08013118               0  .text
+	I2C_Wait_Ack                       0x0801314c      F       94  .text
+	$d                                 0x0801314c               0  .text
+	$t                                 0x0801314c               0  .text
+	$d                                 0x080131ac               0  .text
+	$t                                 0x080131ac               0  .text
+	$d                                 0x080131f0               0  .text
+	$t                                 0x080131f0               0  .text
+	$d                                 0x08013260               0  .text
+	$t                                 0x08013260               0  .text
+	__readByCMD.constprop.0            0x080133a8      F      212  .text
+	$d                                 0x080133a8               0  .text
+	$t                                 0x080133a8               0  .text
+	$d                                 0x0801347c               0  .text
+	flashRead                          0x0801348c      F      166  .text
+	$d                                 0x0801348c               0  .text
+	$t                                 0x0801348c               0  .text
+	$d                                 0x08013532               0  .text
+	$d                                 0x08013538               0  .text
+	$t                                 0x08013538               0  .text
+	$d                                 0x080135a4               0  .text
+	$d                                 0x080135a8               0  .text
+	$t                                 0x080135a8               0  .text
+	$d                                 0x080136fa               0  .text
+	$d                                 0x08013708               0  .text
+	$t                                 0x08013708               0  .text
+	$d                                 0x08013788               0  .text
+	$d                                 0x08013790               0  .text
+	$t                                 0x08013790               0  .text
+	$d                                 0x080137ca               0  .text
+	$d                                 0x080137d0               0  .text
+	$t                                 0x080137d0               0  .text
+	$d                                 0x08013802               0  .text
+	$d                                 0x08013808               0  .text
+	$t                                 0x08013808               0  .text
+	$d                                 0x0801382e               0  .text
+	$d                                 0x08013838               0  .text
+	$t                                 0x08013838               0  .text
+	$d                                 0x0801385e               0  .text
+	$d                                 0x08013868               0  .text
+	$t                                 0x08013868               0  .text
+	$d                                 0x080138d2               0  .text
+	_out_uart                          0x080138e4      F       16  .text
+	$d                                 0x080138e4               0  .text
+	$t                                 0x080138e4               0  .text
+	$d                                 0x080138f4               0  .text
+	_out_null                          0x080138f8      F        2  .text
+	$d                                 0x080138f8               0  .text
+	$t                                 0x080138f8               0  .text
+	_out_rev                           0x080138fc      F      154  .text
+	$d                                 0x080138fc               0  .text
+	$t                                 0x080138fc               0  .text
+	_ntoa_format                       0x08013998      F      486  .text
+	$d                                 0x08013998               0  .text
+	$t                                 0x08013998               0  .text
+	_ntoa_long                         0x08013b80      F      192  .text
+	$d                                 0x08013b80               0  .text
+	$t                                 0x08013b80               0  .text
+	_ntoa_long_long                    0x08013c40      F      214  .text
+	$d                                 0x08013c40               0  .text
+	$t                                 0x08013c40               0  .text
+	_ftoa                              0x08013d18      F     1170  .text
+	$d                                 0x08013d18               0  .text
+	$t                                 0x08013d18               0  .text
+	$d                                 0x08014096               0  .text
+	$t                                 0x080140b8               0  .text
+	$d                                 0x080141aa               0  .text
+	_etoa                              0x080141b0      F     1162  .text
+	$d                                 0x080141b0               0  .text
+	$t                                 0x080141b0               0  .text
+	$d                                 0x080145b0               0  .text
+	$t                                 0x080145ec               0  .text
+	_vsnprintf                         0x0801463c      F     2694  .text
+	$d                                 0x0801463c               0  .text
+	$t                                 0x0801463c               0  .text
+	$d                                 0x0801467e               0  .text
+	$t                                 0x08014688               0  .text
+	$d                                 0x080146e2               0  .text
+	$t                                 0x080146e8               0  .text
+	$d                                 0x08014704               0  .text
+	$t                                 0x08014708               0  .text
+	$d                                 0x080150c4               0  .text
+	$t                                 0x080150c4               0  .text
+	$d                                 0x080150da               0  .text
+	$d                                 0x080150e0               0  .text
+	$t                                 0x080150e0               0  .text
+	$d                                 0x0801510e               0  .text
+	$d                                 0x08015114               0  .text
+	$t                                 0x08015114               0  .text
+	$d                                 0x08015138               0  .text
+	$d                                 0x08015144               0  .text
+	$t                                 0x08015144               0  .text
+	$d                                 0x080151c2               0  .text
+	__func__.5880                      0x08015318      O        9  .rodata
+	__func__.5897                      0x08015324      O       12  .rodata
+	table                              0x08015360      O       10  .rodata
+	pow10.6227                         0x080156e0      O       80  .rodata
+	__stderr                           0x20000104      O       28  .data
+	__stdout                           0x20000124      O       28  .data
+	__stdin                            0x20000144      O       28  .data
+	time_num.6092                      0x20001b80      O        1  .bss
+	cache.5979                         0x20001c14      O      256  .bss
+	cache.6000                         0x20001d14      O     4096  .bss
+	pxReadyTasksLists                  0x20002d18      O     1260  .bss
+	uxSchedulerSuspended               0x20003204      O        4  .bss
+	uxTopReadyPriority                 0x20003208      O        4  .bss
+	xYieldPending                      0x2000320c      O        4  .bss
+
+	Global Symbols
+
+	Symbol Name                        Value        Type   Size  Section
+	__min_heap_size                    0x00000000               0  *ABS*
+	__Vectors                          0x08010400      O      256  .text
+	Reset_Handler                      0x08010500      F       96  .text
+	__stext                            0x08010500               0  .text
+	trap                               0x0801058c      F        0  .text
+	BLE_IRQHandler                     0x080105d0    w F        2  .text
+	BT_IRQHandler                      0x080105d0    w F        2  .text
+	DMA_BRUST_IRQHandler               0x080105d0    w F        2  .text
+	DMA_Channel0_IRQHandler            0x080105d0    w F        2  .text
+	DMA_Channel1_IRQHandler            0x080105d0    w F        2  .text
+	DMA_Channel2_IRQHandler            0x080105d0    w F        2  .text
+	DMA_Channel3_IRQHandler            0x080105d0    w F        2  .text
+	DMA_Channel4_7_IRQHandler          0x080105d0    w F        2  .text
+	Default_Handler                    0x080105d0    w F        2  .text
+	FLASH_IRQHandler                   0x080105d0    w F        2  .text
+	GPSEC_IRQHandler                   0x080105d0    w F        2  .text
+	I2C_IRQHandler                     0x080105d0    w F        2  .text
+	I2S_IRQHandler                     0x080105d0    w F        2  .text
+	MAC_IRQHandler                     0x080105d0    w F        2  .text
+	PMU_IRQHandler                     0x080105d0    w F        2  .text
+	PWM_IRQHandler                     0x080105d0    w F        2  .text
+	RF_Cfg_IRQHandler                  0x080105d0    w F        2  .text
+	RSA_IRQHandler                     0x080105d0    w F        2  .text
+	SDIO_HOST_IRQHandler               0x080105d0    w F        2  .text
+	SDIO_IRQHandler                    0x080105d0    w F        2  .text
+	SEC_IRQHandler                     0x080105d0    w F        2  .text
+	SPI_HS_IRQHandler                  0x080105d0    w F        2  .text
+	SPI_LS_IRQHandler                  0x080105d0    w F        2  .text
+	TOUCH_IRQHandler                   0x080105d0    w F        2  .text
+	UART0_IRQHandler                   0x080105d0    w F        2  .text
+	UART1_IRQHandler                   0x080105d0    w F        2  .text
+	UART2_5_IRQHandler                 0x080105d0    w F        2  .text
+	WDG_IRQHandler                     0x080105d0    w F        2  .text
+	cpu_yeild                          0x080105dc      F        0  .text
+	vPortStartTask                     0x080105e6      F        0  .text
+	tspend_handler                     0x08010618      F        2  .text
+	__fixunsdfsi                       0x0801067c      F       56  .text
+	__udivdi3                          0x080106b4      F      814  .text
+	__umoddi3                          0x080109e8      F      800  .text
+	__extendsfdf2                      0x08010d0c      F       42  .text
+	__adddf3                           0x08010ffc      F       48  .text
+	__subdf3                           0x0801102c      F       56  .text
+	__muldf3                           0x08011068      F      508  .text
+	__divdf3                           0x08011268      F      274  .text
+	__nedf2                            0x08011380      F       56  .text
+	__gtdf2                            0x080113b8      F       64  .text
+	__gedf2                            0x080113f8      F       64  .text
+	__ltdf2                            0x08011438      F       56  .text
+	__floatsidf                        0x08011470      F      104  .text
+	__fixdfsi                          0x080114d8      F      112  .text
+	__make_dp                          0x08011548      F       46  .text
+	__truncdfsf2                       0x08011578      F       52  .text
+	__floatunsidf                      0x080115ac      F       86  .text
+	__muldi3                           0x08011604      F       74  .text
+	__unpack_f                         0x08011650      F      120  .text
+	__make_fp                          0x080116cc      F       22  .text
+	__pack_d                           0x080116e4      F      398  .text
+	__unpack_d                         0x08011874      F      228  .text
+	__fpcmp_parts_d                    0x08011958      F      194  .text
+	__pack_f                           0x08011a1c      F      192  .text
+	__GI_putchar                       0x08011adc      F       12  .text
+	putchar                            0x08011adc    w F       12  .text
+	__GI_puts                          0x08011aec      F       20  .text
+	puts                               0x08011aec    w F       20  .text
+	__GI_fputs                         0x08011b04      F       74  .text
+	fputs                              0x08011b04    w F       74  .text
+	__strlen_fast                      0x08011b50    w F       62  .text
+	strlen                             0x08011b50    w F       62  .text
+	__memcpy_fast                      0x08011b90    w F      126  .text
+	memcpy                             0x08011b90    w F      126  .text
+	__GI_os_critical_open              0x08011c10      F        4  .text
+	os_critical_open                   0x08011c10    w F        4  .text
+	__GI_os_critical_enter             0x08011c14      F        4  .text
+	os_critical_enter                  0x08011c14    w F        4  .text
+	__GI_os_critical_exit              0x08011c18      F        4  .text
+	os_critical_exit                   0x08011c18    w F        4  .text
+	__GI_os_critical_close             0x08011c1c      F        4  .text
+	os_critical_close                  0x08011c1c    w F        4  .text
+	__GI_putc                          0x08011c20      F        8  .text
+	putc                               0x08011c20    w F        8  .text
+	num2char                           0x08011c28      F      254  .text
+	time2string                        0x08011d3c      F      232  .text
+	Write_Flash                        0x08011e3c      F       64  .text
+	Read_Flash                         0x08011e80      F       64  .text
+	OLED_Show                          0x08011ec4      F      248  .text
+	main                               0x08011fd0      F      218  .text
+	HAL_TIM_Callback                   0x080120c0      F      268  .text
+	HAL_MspInit                        0x080121dc      F        2  .text
+	HAL_TIM_Base_MspInit               0x080121e0      F       34  .text
+	HAL_ADC_MspInit                    0x08012204      F      270  .text
+	CORET_IRQHandler                   0x08012318      F       48  .text
+	GPIOA_IRQHandler                   0x0801234c      F       32  .text
+	GPIOB_IRQHandler                   0x0801236c      F       60  .text
+	TIM0_5_IRQHandler                  0x080123ac      F       58  .text
+	ADC_IRQHandler                     0x080123ec      F       58  .text
+	Error_Handler_Adc                  0x0801242c      F       12  .text
+	ADC_Init                           0x0801243c      F      100  .text
+	HAL_ADC_ConvCpltCallback           0x080124a8      F        2  .text
+	GPIO_Init                          0x080124ac      F       68  .text
+	HAL_GPIO_EXTI_Callback             0x080124f4      F       40  .text
+	Error_Handler_Time                 0x08012524      F       12  .text
+	TIM_Init_Us                        0x08012534      F       36  .text
+	I2C_Init                           0x0801255c      F       96  .text
+	OLED_Clear                         0x080125d0      F      112  .text
+	OLED_Set_Pos                       0x08012644      F       80  .text
+	OLED_ShowChar                      0x08012698      F      186  .text
+	OLED_ShowString                    0x08012760      F       60  .text
+	OLED_Init                          0x0801279c      F      566  .text
+	INA226_Read2Byte                   0x080129d8      F       56  .text
+	INA226_Write2Byte                  0x08012a18      F       54  .text
+	Get_Shunt_voltage                  0x08012a58      F       62  .text
+	Get_Power                          0x08012aa0      F      122  .text
+	Get_INA226_All_Value               0x08012b20      F      108  .text
+	INA226_Init                        0x08012b90      F       46  .text
+	HAL_ADC_Init                       0x08012bc0      F      212  .text
+	HAL_ADC_CompareCallback            0x08012c9c    w F        2  .text
+	HAL_ADC_IRQHandler                 0x08012ca0      F       72  .text
+	SystemClock_Get                    0x08012ce8      F       44  .text
+	HAL_InitTick                       0x08012d14    w F      100  .text
+	SystemClock_Config                 0x08012d84      F       96  .text
+	HAL_IncTick                        0x08012de4    w F       10  .text
+	HAL_GetTick                        0x08012df4    w F        6  .text
+	HAL_Delay                          0x08012e00    w F       22  .text
+	HAL_NVIC_SetPriority               0x08012e18      F       46  .text
+	HAL_NVIC_EnableIRQ                 0x08012e4c      F       26  .text
+	HAL_GPIO_Init                      0x08012e6c      F      436  .text
+	HAL_GPIO_ReadPin                   0x08013020      F       12  .text
+	HAL_GPIO_WritePin                  0x0801302c      F       38  .text
+	HAL_GPIO_EXTI_IRQHandler           0x08013054      F       26  .text
+	HAL_Init                           0x08013070      F       10  .text
+	HAL_I2C_Init                       0x080131ac      F       68  .text
+	HAL_I2C_Write                      0x080131f0      F      110  .text
+	HAL_I2C_Read                       0x08013260      F      328  .text
+	HAL_FLASH_Read                     0x08013538      F      108  .text
+	HAL_FLASH_Write                    0x080135a8      F      338  .text
+	HAL_TIM_Base_Init                  0x08013708      F      128  .text
+	HAL_TIM_Base_Start_IT              0x08013790      F       58  .text
+	HAL_TIM_IRQHandler                 0x080137d0      F       50  .text
+	board_init                         0x08013808      F       38  .text
+	SystemInit                         0x08013838      F       38  .text
+	trap_c                             0x08013868      F      106  .text
+	fputc                              0x080150c4      F       22  .text
+	wm_printf                          0x080150e0      F       46  .text
+	__cskyvprintfprintf                0x080150e0    w F       46  .text
+	__assert_fail                      0x08015114    w F       36  .text
+	vTaskSwitchContext                 0x08015144      F      126  .text
+	__etext                            0x080151e0               0  .text
+	__srodata                          0x080151e0               0  .rodata
+	__thenan_df                        0x080151e0      O       20  .rodata
+	__clz_tab                          0x080151f4      O      256  .rodata
+	__erodata                          0x0801576c               0  .rodata
+	__vdata_start__                    0x20000000               0  .vdata
+	irq_vectors                        0x20000000      O      256  .vdata
+	__vdata_end__                      0x20000100               0  .vdata
+	irq_vectors_end                    0x20000100               0  .vdata
+	__data_start__                     0x20000100               0  .data
+	__sdata                            0x20000100               0  .data
+	data_start                         0x20000100               0  .data
+	stderr                             0x20000100      O        4  .data
+	stdout                             0x20000120      O        4  .data
+	stdin                              0x20000140      O        4  .data
+	Show_Flage                         0x20000160      O        1  .data
+	F6x8                               0x20000164      O      552  .data
+	F8X16                              0x2000038c      O     1520  .data
+	__data_end__                       0x2000097c               0  .data
+	__edata                            0x2000097c               0  .data
+	__start_cmd                        0x2000097c               0  .data
+	__start_init_call                  0x2000097c               0  .data
+	__stop_cmd                         0x2000097c               0  .data
+	__stop_init_call                   0x2000097c               0  .data
+	__bss_start__                      0x2000097c               0  .bss
+	__sbss                             0x2000097c               0  .bss
+	g_intstackalloc                    0x2000097c               0  .bss
+	g_intstackbase                     0x2000097c               0  .bss
+	g_top_irqstack                     0x2000197c               0  .bss
+	g_trapstackalloc                   0x2000197c               0  .bss
+	g_trapstackbase                    0x2000197c               0  .bss
+	g_top_trapstack                    0x20001b7c               0  .bss
+	g_trap_sp                          0x20001b7c      O        4  .bss
+	key_flag                           0x20001b81      O        1  .bss
+	htim                               0x20001b84      O      144  .bss
+	pxCurrentTCB                       0x20002d14      O        4  .bss
+	INA226_Value                       0x20003210      O       44  .bss
+	hadc                               0x2000323c      O      168  .bss
+	hi2c                               0x200032e4      O       32  .bss
+	uwTick                             0x20003304      O        4  .bss
+	uwTickPrio                         0x20003308      O        4  .bss
+	pFlash                             0x2000330c      O        4  .bss
+	__bss_end__                        0x20003310               0  .bss
+	__ebss                             0x20003310               0  .bss
+	__end                              0x20003310               0  .bss
+	end                                0x20003310               0  .bss
+	__heap_start                       0x20003310               0  ._user_heap
+
+	(w:Weak    d:Deubg    F:Function    f:File name    O:Zero)
+
+
+======================================================================
+
+Memory Map of the image
+
+    Image Entry point : 0x08010500
+
+    Region I-SRAM (Base: 0x08010400, Size: 0x00005be8, Max: 0x000efc00)
+
+    Base Addr    Size         Type   Attr      Idx   Section Name       Object
+    0x08010500   0x0000008c   Code   RO        694  .text          	Obj/bsp_startup.o
+    0x0801058c   0x00000050   Code   RO        739  .text          	Obj/bsp_vectors.o
+    0x080105dc   0x000000a0   Code   RO       1091  .text          	Obj/xt804_cpu_task_sw.o
+    0x0801067c   0x00000038   Code   RO       1185  .text          	_fixunsdfsi.o
+    0x080106b4   0x00000334   Code   RO       1192  .text          	_udivdi3.o
+    0x080109e8   0x00000324   Code   RO       1199  .text          	_umoddi3.o
+    0x08010d0c   0x0000002a   Code   RO       1206  .text          	_sf_to_df.o
+    0x08010d36   0x00000002   PAD
+    0x08010d38   0x00000330   Code   RO       1213  .text          	_addsub_df.o
+    0x08011068   0x00000200   Code   RO       1220  .text          	_mul_df.o
+    0x08011268   0x00000118   Code   RO       1227  .text          	_div_df.o
+    0x08011380   0x00000038   Code   RO       1234  .text          	_ne_df.o
+    0x080113b8   0x00000040   Code   RO       1241  .text          	_gt_df.o
+    0x080113f8   0x00000040   Code   RO       1248  .text          	_ge_df.o
+    0x08011438   0x00000038   Code   RO       1255  .text          	_lt_df.o
+    0x08011470   0x00000068   Code   RO       1262  .text          	_si_to_df.o
+    0x080114d8   0x00000070   Code   RO       1269  .text          	_df_to_si.o
+    0x08011548   0x0000002e   Code   RO       1276  .text          	_make_df.o
+    0x08011576   0x00000002   PAD
+    0x08011578   0x00000034   Code   RO       1283  .text          	_df_to_sf.o
+    0x080115ac   0x00000056   Code   RO       1297  .text          	_usi_to_df.o
+    0x08011602   0x00000002   PAD
+    0x08011604   0x0000004a   Code   RO       1304  .text          	_muldi3.o
+    0x0801164e   0x00000002   PAD
+    0x08011650   0x0000007c   Code   RO       1318  .text          	_unpack_sf.o
+    0x080116cc   0x00000016   Code   RO       1324  .text          	_make_sf.o
+    0x080116e2   0x00000002   PAD
+    0x080116e4   0x0000018e   Code   RO       1331  .text          	_pack_df.o
+    0x08011872   0x00000002   PAD
+    0x08011874   0x000000e4   Code   RO       1338  .text          	_unpack_df.o
+    0x08011958   0x000000c2   Code   RO       1345  .text          	_fpcmp_parts_df.o
+    0x08011a1a   0x00000002   PAD
+    0x08011a1c   0x000000c0   Code   RO       1351  .text          	_pack_sf.o
+    0x08011adc   0x00000010   Code   RO       1369  .text          	putchar.o
+    0x08011aec   0x00000018   Code   RO       1376  .text          	puts.o
+    0x08011b04   0x0000004a   Code   RO       1389  .text          	fputs.o
+    0x08011b4e   0x00000002   PAD
+    0x08011b50   0x0000003e   Code   RO       1416  .text          	strlen_fast.o
+    0x08011b8e   0x00000002   PAD
+    0x08011b90   0x0000007e   Code   RO       1426  .text          	memcpy_fast.o
+    0x08011c0e   0x00000002   PAD
+    0x08011c10   0x00000010   Code   RO       1445  .text          	critical.o
+    0x08011c20   0x00000008   Code   RO       1451  .text          	putc.o
+    0x08011c28   0x00000114   Code   RO         19  .text.num2char 	Obj/src_main.o
+    0x08011d3c   0x00000100   Code   RO         20  .text.time2string	Obj/src_main.o
+    0x08011e3c   0x00000044   Code   RO         21  .text.Write_Flash	Obj/src_main.o
+    0x08011e80   0x00000044   Code   RO         22  .text.Read_Flash	Obj/src_main.o
+    0x08011ec4   0x0000010c   Code   RO         23  .text.OLED_Show	Obj/src_main.o
+    0x08011fd0   0x000000f0   Code   RO         24  .text.startup.main	Obj/src_main.o
+    0x080120c0   0x0000011c   Code   RO         25  .text.HAL_TIM_Callback	Obj/src_main.o
+    0x080121dc   0x00000002   Code   RO         55  .text.HAL_MspInit	Obj/src_wm_hal_msp.o
+    0x080121de   0x00000002   PAD
+    0x080121e0   0x00000022   Code   RO         58  .text.HAL_TIM_Base_MspInit	Obj/src_wm_hal_msp.o
+    0x08012202   0x00000002   PAD
+    0x08012204   0x00000114   Code   RO         62  .text.HAL_ADC_MspInit	Obj/src_wm_hal_msp.o
+    0x08012318   0x00000034   Code   RO         80  .text.CORET_IRQHandler	Obj/src_wm_it.o
+    0x0801234c   0x00000020   Code   RO         81  .text.GPIOA_IRQHandler	Obj/src_wm_it.o
+    0x0801236c   0x00000040   Code   RO         82  .text.GPIOB_IRQHandler	Obj/src_wm_it.o
+    0x080123ac   0x00000040   Code   RO         83  .text.TIM0_5_IRQHandler	Obj/src_wm_it.o
+    0x080123ec   0x00000040   Code   RO         84  .text.ADC_IRQHandler	Obj/src_wm_it.o
+    0x0801242c   0x00000010   Code   RO        100  .text.Error_Handler_Adc	Obj/src_adc.o
+    0x0801243c   0x0000006c   Code   RO        101  .text.ADC_Init 	Obj/src_adc.o
+    0x080124a8   0x00000002   Code   RO        103  .text.HAL_ADC_ConvCpltCallback	Obj/src_adc.o
+    0x080124aa   0x00000002   PAD
+    0x080124ac   0x00000048   Code   RO        122  .text.GPIO_Init	Obj/src_gpio.o
+    0x080124f4   0x00000030   Code   RO        123  .text.HAL_GPIO_EXTI_Callback	Obj/src_gpio.o
+    0x08012524   0x00000010   Code   RO        159  .text.Error_Handler_Time	Obj/src_timer.o
+    0x08012534   0x00000028   Code   RO        161  .text.TIM_Init_Us	Obj/src_timer.o
+    0x0801255c   0x00000074   Code   RO        180  .text.I2C_Init 	Obj/src_iic.o
+    0x080125d0   0x00000074   Code   RO        202  .text.OLED_Clear	Obj/src_oled.o
+    0x08012644   0x00000054   Code   RO        203  .text.OLED_Set_Pos	Obj/src_oled.o
+    0x08012698   0x000000c8   Code   RO        204  .text.OLED_ShowChar	Obj/src_oled.o
+    0x08012760   0x0000003c   Code   RO        205  .text.OLED_ShowString	Obj/src_oled.o
+    0x0801279c   0x0000023c   Code   RO        210  .text.OLED_Init	Obj/src_oled.o
+    0x080129d8   0x00000040   Code   RO        233  .text.INA226_Read2Byte	Obj/src_ina226.o
+    0x08012a18   0x00000040   Code   RO        234  .text.INA226_Write2Byte	Obj/src_ina226.o
+    0x08012a58   0x00000048   Code   RO        241  .text.Get_Shunt_voltage	Obj/src_ina226.o
+    0x08012aa0   0x00000080   Code   RO        243  .text.Get_Power	Obj/src_ina226.o
+    0x08012b20   0x00000070   Code   RO        246  .text.Get_INA226_All_Value	Obj/src_ina226.o
+    0x08012b90   0x0000002e   Code   RO        247  .text.INA226_Init	Obj/src_ina226.o
+    0x08012bbe   0x00000002   PAD
+    0x08012bc0   0x000000dc   Code   RO        287  .text.HAL_ADC_Init	Obj/drivers_wm_adc.o
+    0x08012c9c   0x00000002   Code   RO        300  .text.HAL_ADC_CompareCallback	Obj/drivers_wm_adc.o
+    0x08012c9e   0x00000002   PAD
+    0x08012ca0   0x00000048   Code   RO        301  .text.HAL_ADC_IRQHandler	Obj/drivers_wm_adc.o
+    0x08012ce8   0x0000002c   Code   RO        318  .text.SystemClock_Get	Obj/drivers_wm_cpu.o
+    0x08012d14   0x00000070   Code   RO        319  .text.HAL_InitTick	Obj/drivers_wm_cpu.o
+    0x08012d84   0x00000060   Code   RO        320  .text.SystemClock_Config	Obj/drivers_wm_cpu.o
+    0x08012de4   0x00000010   Code   RO        321  .text.HAL_IncTick	Obj/drivers_wm_cpu.o
+    0x08012df4   0x0000000c   Code   RO        322  .text.HAL_GetTick	Obj/drivers_wm_cpu.o
+    0x08012e00   0x00000016   Code   RO        323  .text.HAL_Delay	Obj/drivers_wm_cpu.o
+    0x08012e16   0x00000002   PAD
+    0x08012e18   0x00000034   Code   RO        324  .text.HAL_NVIC_SetPriority	Obj/drivers_wm_cpu.o
+    0x08012e4c   0x00000020   Code   RO        325  .text.HAL_NVIC_EnableIRQ	Obj/drivers_wm_cpu.o
+    0x08012e6c   0x000001b4   Code   RO        344  .text.HAL_GPIO_Init	Obj/drivers_wm_gpio.o
+    0x08013020   0x0000000c   Code   RO        349  .text.HAL_GPIO_ReadPin	Obj/drivers_wm_gpio.o
+    0x0801302c   0x00000026   Code   RO        350  .text.HAL_GPIO_WritePin	Obj/drivers_wm_gpio.o
+    0x08013052   0x00000002   PAD
+    0x08013054   0x0000001a   Code   RO        353  .text.HAL_GPIO_EXTI_IRQHandler	Obj/drivers_wm_gpio.o
+    0x0801306e   0x00000002   PAD
+    0x08013070   0x0000000a   Code   RO        372  .text.HAL_Init 	Obj/drivers_wm_hal.o
+    0x0801307a   0x00000002   PAD
+    0x0801307c   0x00000046   Code   RO        389  .text.I2C_Start	Obj/drivers_wm_i2c.o
+    0x080130c2   0x00000002   PAD
+    0x080130c4   0x00000054   Code   RO        390  .text.I2C_Write_Byte	Obj/drivers_wm_i2c.o
+    0x08013118   0x00000034   Code   RO        391  .text.I2C_Stop 	Obj/drivers_wm_i2c.o
+    0x0801314c   0x0000005e   Code   RO        392  .text.I2C_Wait_Ack	Obj/drivers_wm_i2c.o
+    0x080131aa   0x00000002   PAD
+    0x080131ac   0x00000044   Code   RO        393  .text.HAL_I2C_Init	Obj/drivers_wm_i2c.o
+    0x080131f0   0x0000006e   Code   RO        395  .text.HAL_I2C_Write	Obj/drivers_wm_i2c.o
+    0x0801325e   0x00000002   PAD
+    0x08013260   0x00000148   Code   RO        396  .text.HAL_I2C_Read	Obj/drivers_wm_i2c.o
+    0x080133a8   0x000000e4   Code   RO        413  .text.__readByCMD.constprop.0	Obj/drivers_wm_internal_flash.o
+    0x0801348c   0x000000ac   Code   RO        414  .text.flashRead	Obj/drivers_wm_internal_flash.o
+    0x08013538   0x00000070   Code   RO        418  .text.HAL_FLASH_Read	Obj/drivers_wm_internal_flash.o
+    0x080135a8   0x00000160   Code   RO        419  .text.HAL_FLASH_Write	Obj/drivers_wm_internal_flash.o
+    0x08013708   0x00000088   Code   RO        560  .text.HAL_TIM_Base_Init	Obj/drivers_wm_tim.o
+    0x08013790   0x00000040   Code   RO        565  .text.HAL_TIM_Base_Start_IT	Obj/drivers_wm_tim.o
+    0x080137d0   0x00000038   Code   RO        569  .text.HAL_TIM_IRQHandler	Obj/drivers_wm_tim.o
+    0x08013808   0x00000030   Code   RO        682  .text.board_init	Obj/bsp_board_init.o
+    0x08013838   0x00000030   Code   RO        708  .text.SystemInit	Obj/bsp_system.o
+    0x08013868   0x0000007c   Code   RO        724  .text.trap_c   	Obj/bsp_trap_c.o
+    0x080138e4   0x00000014   Code   RO        752  .text._out_uart	Obj/libc_libc_port.o
+    0x080138f8   0x00000002   Code   RO        753  .text._out_null	Obj/libc_libc_port.o
+    0x080138fa   0x00000002   PAD
+    0x080138fc   0x0000009a   Code   RO        754  .text._out_rev 	Obj/libc_libc_port.o
+    0x08013996   0x00000002   PAD
+    0x08013998   0x000001e6   Code   RO        755  .text._ntoa_format	Obj/libc_libc_port.o
+    0x08013b7e   0x00000002   PAD
+    0x08013b80   0x000000c0   Code   RO        756  .text._ntoa_long	Obj/libc_libc_port.o
+    0x08013c40   0x000000d6   Code   RO        757  .text._ntoa_long_long	Obj/libc_libc_port.o
+    0x08013d16   0x00000002   PAD
+    0x08013d18   0x00000498   Code   RO        758  .text._ftoa    	Obj/libc_libc_port.o
+    0x080141b0   0x0000048a   Code   RO        759  .text._etoa    	Obj/libc_libc_port.o
+    0x0801463a   0x00000002   PAD
+    0x0801463c   0x00000a86   Code   RO        760  .text._vsnprintf	Obj/libc_libc_port.o
+    0x080150c2   0x00000002   PAD
+    0x080150c4   0x0000001c   Code   RO        764  .text.fputc    	Obj/libc_libc_port.o
+    0x080150e0   0x00000034   Code   RO        771  .text.wm_printf	Obj/libc_libc_port.o
+    0x08015114   0x00000030   Code   RO        779  .text.__assert_fail	Obj/libc_libc_port.o
+    0x08015144   0x0000009c   Code   RO        975  .text.vTaskSwitchContext	Obj/FreeRTOS_tasks.o
+    0x080151e0   0x00000014   Data   RO       1293  .rodata        	_thenan_df.o
+    0x080151f4   0x00000100   Data   RO       1314  .rodata        	_clz.o
+    0x080152f4   0x00000010   Data   RO         29  .rodata.OLED_Show.str1.4	Obj/src_main.o
+    0x08015304   0x00000013   Data   RO         30  .rodata.Write_Flash.str1.4	Obj/src_main.o
+    0x08015317   0x00000001   PAD
+    0x08015318   0x00000009   Data   RO         31  .rodata.__func__.5880	Obj/src_main.o
+    0x08015321   0x00000003   PAD
+    0x08015324   0x0000000c   Data   RO         32  .rodata.__func__.5897	Obj/src_main.o
+    0x08015330   0x0000000c   Data   RO         34  .rodata.main.str1.4	Obj/src_main.o
+    0x0801533c   0x00000024   Data   RO         35  .rodata.num2char.str1.4	Obj/src_main.o
+    0x08015360   0x0000000a   Data   RO         36  .rodata.table  	Obj/src_main.o
+    0x0801536a   0x00000002   PAD
+    0x0801536c   0x00000016   Data   RO         37  .rodata.time2string.str1.4	Obj/src_main.o
+    0x08015382   0x00000002   PAD
+    0x08015384   0x00000018   Data   RO        102  .rodata.ADC_Init	Obj/src_adc.o
+    0x0801539c   0x0000004a   Data   RO        104  .rodata.ADC_Init.str1.4	Obj/src_adc.o
+    0x080153e6   0x00000002   PAD
+    0x080153e8   0x00000013   Data   RO        105  .rodata.Error_Handler_Adc.str1.4	Obj/src_adc.o
+    0x080153fb   0x00000001   PAD
+    0x080153fc   0x00000014   Data   RO        163  .rodata.Error_Handler_Time.str1.4	Obj/src_timer.o
+    0x08015410   0x00000022   Data   RO        181  .rodata.I2C_Init.str1.4	Obj/src_iic.o
+    0x08015432   0x00000002   PAD
+    0x08015434   0x00000011   Data   RO        249  .rodata.INA226_Read2Byte.str1.4	Obj/src_ina226.o
+    0x08015445   0x00000003   PAD
+    0x08015448   0x00000012   Data   RO        250  .rodata.INA226_Write2Byte.str1.4	Obj/src_ina226.o
+    0x0801545a   0x00000002   PAD
+    0x0801545c   0x00000014   Data   RO        345  .rodata.HAL_GPIO_Init	Obj/drivers_wm_gpio.o
+    0x08015470   0x00000037   Data   RO        725  .rodata.trap_c.str1.4	Obj/bsp_trap_c.o
+    0x080154a7   0x00000001   PAD
+    0x080154a8   0x000001e0   Data   RO        761  .rodata._vsnprintf	Obj/libc_libc_port.o
+    0x08015688   0x00000040   Data   RO        780  .rodata.__assert_fail.str1.4	Obj/libc_libc_port.o
+    0x080156c8   0x00000015   Data   RO        781  .rodata._ftoa.str1.4	Obj/libc_libc_port.o
+    0x080156dd   0x00000003   PAD
+    0x080156e0   0x00000050   Data   RO        782  .rodata.pow10.6227	Obj/libc_libc_port.o
+    0x08015730   0x0000003c   Data   RO       1029  .rodata.prvDeleteTCB.str1.4	Obj/FreeRTOS_tasks.o
+
+    Region D-SRAM (Base: 0x20000100, Size: 0x00003210, Max: 0x00047f00)
+
+    Base Addr    Size         Type   Attr      Idx   Section Name       Object
+    0x20000100   0x00000060   Data   RW       1384  .data          	stdinit.o
+    0x20000160   0x00000001   Data   RW         28  .data.Show_Flage	Obj/src_main.o
+    0x20000161   0x00000003   PAD
+    0x20000164   0x00000228   Data   RW        211  .data.F6x8     	Obj/src_oled.o
+    0x2000038c   0x000005f0   Data   RW        212  .data.F8X16    	Obj/src_oled.o
+    0x2000097c   0x00001000   Zero   RW        696  .bss           	Obj/bsp_startup.o
+    0x2000197c   0x00000204   Zero   RW        741  .bss           	Obj/bsp_vectors.o
+    0x20001b80   0x00000001   Zero   RW         27  .bss.time_num.6092	Obj/src_main.o
+    0x20001b81   0x00000001   Zero   RW        124  .bss.key_flag  	Obj/src_gpio.o
+    0x20001b82   0x00000002   PAD
+    0x20001b84   0x00000090   Zero   RW        162  .bss.htim      	Obj/src_timer.o
+    0x20001c14   0x00000100   Zero   RW        420  .bss.cache.5979	Obj/drivers_wm_internal_flash.o
+    0x20001d14   0x00001000   Zero   RW        421  .bss.cache.6000	Obj/drivers_wm_internal_flash.o
+    0x20002d14   0x00000004   Zero   RW       1008  .bss.pxCurrentTCB	Obj/FreeRTOS_tasks.o
+    0x20002d18   0x000004ec   Zero   RW       1011  .bss.pxReadyTasksLists	Obj/FreeRTOS_tasks.o
+    0x20003204   0x00000004   Zero   RW       1014  .bss.uxSchedulerSuspended	Obj/FreeRTOS_tasks.o
+    0x20003208   0x00000004   Zero   RW       1016  .bss.uxTopReadyPriority	Obj/FreeRTOS_tasks.o
+    0x2000320c   0x00000004   Zero   RW       1027  .bss.xYieldPending	Obj/FreeRTOS_tasks.o
+    0x20003210   0x000000d4   Zero   RW         51  COMMON         	Obj/src_main.o
+    0x200032e4   0x00000020   Zero   RW        195  COMMON         	Obj/src_iic.o
+    0x20003304   0x00000008   Zero   RW        340  COMMON         	Obj/drivers_wm_cpu.o
+    0x2000330c   0x00000004   Zero   RW        435  COMMON         	Obj/drivers_wm_internal_flash.o
+
+    Region V-SRAM (Base: 0x20000000, Size: 0x00000000, Max: 0x00000100)
+
+    Region *default* (Base: 0x00000000, Size: 0x00000000, Max: 0xffffffff)
+
+
+======================================================================
+
+Image component sizes
+
+       Code    RO Data    RW Data    ZI Data      Debug   Object Name
+
+          0          0          0          0          0   linker stubs
+       1460        136          1        213     134437   Obj/src_main.o
+        312          0          0          0     130036   Obj/src_wm_hal_msp.o
+        276          0          0          0     127616   Obj/src_wm_it.o
+        126        117          0          0     127394   Obj/src_adc.o
+        120          0          0          1     127414   Obj/src_gpio.o
+          0          0          0          0          0   Obj/src_pwm.o
+         56         20          0        144     127183   Obj/src_timer.o
+        116         34          0         32     126942   Obj/src_iic.o
+       1032          0       2072          0     130686   Obj/src_oled.o
+        486         35          0          0     130973   Obj/src_ina226.o
+          0          0          0          0          0   Obj/src_spi.o
+        294          0          0          0     130476   Obj/drivers_wm_adc.o
+        386          0          0          8     130558   Obj/drivers_wm_cpu.o
+        512         20          0          0     128704   Obj/drivers_wm_gpio.o
+         10          0          0          0     126652   Obj/drivers_wm_hal.o
+        806          0          0          0     130491   Obj/drivers_wm_i2c.o
+        864          0          0       4356     132733   Obj/drivers_wm_internal_flash.o
+          0          0          0          0          0   Obj/drivers_wm_pmu.o
+          0          0          0          0          0   Obj/drivers_wm_pwm.o
+          0          0          0          0          0   Obj/drivers_wm_spi.o
+          0          0          0          0          0   Obj/drivers_wm_spi_flash.o
+        256          0          0          0     128686   Obj/drivers_wm_tim.o
+          0          0          0          0          0   Obj/drivers_wm_touch.o
+          0          0          0          0          0   Obj/drivers_wm_uart.o
+          0          0          0          0          0   Obj/drivers_wm_wdg.o
+          0          0          0          0          0   Obj/drivers_wm_lcd.o
+         48          0          0          0     128031   Obj/bsp_board_init.o
+        140          0          0       4096        298   Obj/bsp_startup.o
+         48          0          0          0      23915   Obj/bsp_system.o
+        124         55          0          0      14629   Obj/bsp_trap_c.o
+         80          0          0        516        271   Obj/bsp_vectors.o
+       6228        645          0          0     155608   Obj/libc_libc_port.o
+          0          0          0          0          0   Obj/FreeRTOS_croutine.o
+          0          0          0          0          0   Obj/FreeRTOS_event_groups.o
+          0          0          0          0          0   Obj/FreeRTOS_list.o
+          0          0          0          0          0   Obj/FreeRTOS_queue.o
+          0          0          0          0          0   Obj/FreeRTOS_stream_buffer.o
+        156         60          0       1276      78236   Obj/FreeRTOS_tasks.o
+          0          0          0          0          0   Obj/FreeRTOS_timers.o
+        160          0          0          0        349   Obj/xt804_cpu_task_sw.o
+          0          0          0          0          0   Obj/xt804_port.o
+          0          0          0          0          0   Obj/MemMang_heap_5.o
+	------------------------------------------------------------
+      14096       1122       2073      10642    2472318   Object Totals
+         56         22          3          2          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+    [Library Name]: d:/c-sky/cdk/csky/mingw/csky-abiv2-elf-toolchain/bin/../lib/gcc/csky-elfabiv2/6.3.0/ck803/hard-fp\libgcc.a
+	------------------------------------------------------------
+       Code    RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         56          0          0          0          0   _fixunsdfsi.o
+        820          0          0          0          0   _udivdi3.o
+        804          0          0          0          0   _umoddi3.o
+         42          0          0          0          0   _sf_to_df.o
+        816          0          0          0          0   _addsub_df.o
+        512          0          0          0          0   _mul_df.o
+        280          0          0          0          0   _div_df.o
+         56          0          0          0          0   _ne_df.o
+         64          0          0          0          0   _gt_df.o
+         64          0          0          0          0   _ge_df.o
+         56          0          0          0          0   _lt_df.o
+        104          0          0          0          0   _si_to_df.o
+        112          0          0          0          0   _df_to_si.o
+         46          0          0          0          0   _make_df.o
+         52          0          0          0          0   _df_to_sf.o
+          0         20          0          0          0   _thenan_df.o
+         86          0          0          0          0   _usi_to_df.o
+         74          0          0          0          0   _muldi3.o
+          0        256          0          0          0   _clz.o
+        124          0          0          0          0   _unpack_sf.o
+         22          0          0          0          0   _make_sf.o
+        398          0          0          0          0   _pack_df.o
+        228          0          0          0          0   _unpack_df.o
+        194          0          0          0          0   _fpcmp_parts_df.o
+        192          0          0          0          0   _pack_sf.o
+	------------------------------------------------------------
+       5202        276          0          0          0   Library Totals
+          0          0          0          0          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+    [Library Name]: d:/c-sky/cdk/csky/mingw/csky-abiv2-elf-toolchain/bin/../lib/gcc/csky-elfabiv2/6.3.0/../../../../csky-elfabiv2/lib/ck803/hard-fp\libc.a
+	------------------------------------------------------------
+       Code    RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+          0          0          0          0          0   isspace.o
+         16          0          0          0          0   putchar.o
+         24          0          0          0          0   puts.o
+          0          0         96          0          0   stdinit.o
+         74          0          0          0          0   fputs.o
+          0          0          0          0          0   strtod.o
+          0          0          0          0          0   strtof.o
+          0          0          0          0          0   memset_fast.o
+         62          0          0          0          0   strlen_fast.o
+          0          0          0          0          0   strcpy_fast.o
+        126          0          0          0          0   memcpy_fast.o
+          0          0          0          0          0   isdigit.o
+          0          0          0          0          0   minilibc_init.o
+         16          0          0          0          0   critical.o
+          8          0          0          0          0   putc.o
+          0          0          0          0          0   abs.o
+	------------------------------------------------------------
+        326          0         96          0          0   Library Totals
+          0          0          0          0          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+    [Library Name]: d:/c-sky/cdk/csky/mingw/csky-abiv2-elf-toolchain/bin/../lib/gcc/csky-elfabiv2/6.3.0/ck803/hard-fp\libgcc.a
+	------------------------------------------------------------
+       Code    RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+          0          0          0          0          0   _eq_df.o
+	------------------------------------------------------------
+          0          0          0          0          0   Library Totals
+          0          0          0          0          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+
+======================================================================
+
+
+       Code    RO Data    RW Data    ZI Data      Debug
+      19680       1420       2172      10644    2472318   Grand Totals
+      19680       1420       2172      10644    2472318   Elf Image Totals
+      19680       1420       2172          0          0   ROM Totals
+
+======================================================================
+
+Total	RO	Size (Code + RO Data)				21100 (  20.61kB)
+Total	RW	Size (RW Data + ZI Data)			12816 (  12.52kB)
+Total	ROM	Size (Code + RO Data + RW Data)		23272 (  22.73kB)
+
+======================================================================

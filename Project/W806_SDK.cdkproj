@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Name="W806_SDK" Version="1" Language="C">
+  <Description/>
+  <Dependencies Name="Debug"/>
+  <VirtualDirectory Name="Ld">
+    <File Name="gcc_csky.ld">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="App">
+    <VirtualDirectory Name="src">
+      <File Name="src/main.c">
+        <FileOption/>
+      </File>
+      <File Name="src/wm_hal_msp.c">
+        <FileOption/>
+      </File>
+      <File Name="src/wm_it.c">
+        <FileOption/>
+      </File>
+      <File Name="src/adc.c">
+        <FileOption/>
+      </File>
+      <File Name="src/gpio.c">
+        <FileOption/>
+      </File>
+      <File Name="src/pwm.c">
+        <FileOption/>
+      </File>
+      <File Name="src/timer.c">
+        <FileOption/>
+      </File>
+      <File Name="src/iic.c">
+        <FileOption/>
+      </File>
+      <File Name="src/oled.c">
+        <FileOption/>
+      </File>
+      <File Name="src/ina226.c">
+        <FileOption/>
+      </File>
+      <File Name="src/spi.c">
+        <FileOption/>
+      </File>
+    </VirtualDirectory>
+    <VirtualDirectory Name="inc">
+      <File Name="inc/wm_it.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/adc.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/gpio.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/pwm.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/timer.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/iic.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/oled.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/oledfont.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/ina226.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/sys.h">
+        <FileOption/>
+      </File>
+      <File Name="inc/spi.h">
+        <FileOption/>
+      </File>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="Libraries">
+    <VirtualDirectory Name="arch">
+      <VirtualDirectory Name="xt804">
+        <VirtualDirectory Name="bsp">
+          <File Name="../Libraries/arch/xt804/bsp/board_init.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/arch/xt804/bsp/startup.S">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/arch/xt804/bsp/system.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/arch/xt804/bsp/trap_c.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/arch/xt804/bsp/vectors.S">
+            <FileOption/>
+          </File>
+        </VirtualDirectory>
+        <VirtualDirectory Name="libc">
+          <File Name="../Libraries/arch/xt804/libc/libc_port.c">
+            <FileOption/>
+          </File>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="component" ExcludeProjConfig="">
+      <VirtualDirectory Name="FreeRTOS">
+        <VirtualDirectory Name="src">
+          <File Name="../Libraries/component/FreeRTOS/croutine.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/event_groups.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/list.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/queue.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/stream_buffer.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/tasks.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/timers.c">
+            <FileOption/>
+          </File>
+        </VirtualDirectory>
+        <VirtualDirectory Name="include">
+          <File Name="../Libraries/component/FreeRTOS/include/atomic.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/croutine.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/deprecated_definitions.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/event_groups.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/FreeRTOS.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/FreeRTOSConfig.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/list.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/message_buffer.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/mpu_prototypes.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/mpu_wrappers.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/portable.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/projdefs.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/queue.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/semphr.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/StackMacros.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/stack_macros.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/stdint.readme">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/stream_buffer.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/task.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/include/timers.h">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/portable/xt804/portmacro.h">
+            <FileOption/>
+          </File>
+        </VirtualDirectory>
+        <VirtualDirectory Name="portable">
+          <File Name="../Libraries/component/FreeRTOS/portable/xt804/cpu_task_sw.S">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/portable/xt804/port.c">
+            <FileOption/>
+          </File>
+          <File Name="../Libraries/component/FreeRTOS/portable/MemMang/heap_5.c">
+            <FileOption/>
+          </File>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="drivers">
+      <File Name="../Libraries/drivers/wm_adc.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_cpu.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_gpio.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_hal.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_i2c.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_internal_flash.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_pmu.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_pwm.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_spi.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_spi_flash.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_tim.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_touch.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_uart.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_wdg.c">
+        <FileOption/>
+      </File>
+      <File Name="../Libraries/drivers/wm_lcd.c">
+        <FileOption/>
+      </File>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="Include">
+    <VirtualDirectory Name="arch">
+      <VirtualDirectory Name="xt804">
+        <File Name="../Include/arch/xt804/csi_config.h">
+          <FileOption/>
+        </File>
+        <VirtualDirectory Name="csi_core">
+          <File Name="../Include/arch/xt804/csi_core/core_804.h">
+            <FileOption/>
+          </File>
+          <File Name="../Include/arch/xt804/csi_core/csi_core.h">
+            <FileOption/>
+          </File>
+          <File Name="../Include/arch/xt804/csi_core/csi_gcc.h">
+            <FileOption/>
+          </File>
+        </VirtualDirectory>
+        <VirtualDirectory Name="csi_dsp">
+          <File Name="../Include/arch/xt804/csi_dsp/csky_common_tables.h">
+            <FileOption/>
+          </File>
+          <File Name="../Include/arch/xt804/csi_dsp/csky_const_structs.h">
+            <FileOption/>
+          </File>
+          <File Name="../Include/arch/xt804/csi_dsp/csky_math.h">
+            <FileOption/>
+          </File>
+          <File Name="../Include/arch/xt804/csi_dsp/csky_vdsp2_const_structs.h">
+            <FileOption/>
+          </File>
+          <File Name="../Include/arch/xt804/csi_dsp/csky_vdsp2_math.h">
+            <FileOption/>
+          </File>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <File Name="../Include/wm_regs.h">
+      <FileOption/>
+    </File>
+    <File Name="../Include/wm_type_def.h">
+      <FileOption/>
+    </File>
+    <VirtualDirectory Name="driver">
+      <File Name="../Include/driver/wm_adc.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_cpu.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_gpio.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_gpio_ex.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_hal.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_i2c.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_internal_flash.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_pmu.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_pwm.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_rcc.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_spi.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_spi_flash.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_tim.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_touch.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_uart.h">
+        <FileOption/>
+      </File>
+      <File Name="../Include/driver/wm_wdg.h">
+        <FileOption/>
+      </File>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <MonitorProgress>
+    <FlashOperate>59</FlashOperate>
+    <DebugLaunch>46</DebugLaunch>
+  </MonitorProgress>
+  <BuildConfigs>
+    <BuildConfig Name="BuildSet">
+      <Target>
+        <ROMBank Selected="1">
+          <ROM1>
+            <InUse>yes</InUse>
+            <Start>0x0</Start>
+            <Size>0x5000</Size>
+          </ROM1>
+          <ROM2>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+          </ROM2>
+          <ROM3>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+          </ROM3>
+          <ROM4>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+          </ROM4>
+          <ROM5>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+          </ROM5>
+        </ROMBank>
+        <RAMBank>
+          <RAM1>
+            <InUse>yes</InUse>
+            <Start>0x20000000</Start>
+            <Size>0x48000</Size>
+            <Init>yes</Init>
+          </RAM1>
+          <RAM2>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+            <Init>yes</Init>
+          </RAM2>
+          <RAM3>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+            <Init>yes</Init>
+          </RAM3>
+          <RAM4>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+            <Init>yes</Init>
+          </RAM4>
+          <RAM5>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+            <Init>yes</Init>
+          </RAM5>
+        </RAMBank>
+        <CPU>ck804ef</CPU>
+        <UseMiniLib>yes</UseMiniLib>
+        <Endian>little</Endian>
+        <UseHardFloat>yes</UseHardFloat>
+        <UseEnhancedLRW>no</UseEnhancedLRW>
+        <UseContinueBuild>no</UseContinueBuild>
+        <UseSemiHost>no</UseSemiHost>
+      </Target>
+      <Output>
+        <OutputName>W806</OutputName>
+        <Type>Executable</Type>
+        <CreateHexFile>no</CreateHexFile>
+        <CreateBinFile>yes</CreateBinFile>
+        <Preprocessor>no</Preprocessor>
+        <Disassmeble>yes</Disassmeble>
+        <CallGraph>no</CallGraph>
+        <Map>yes</Map>
+      </Output>
+      <User>
+        <BeforeCompile>
+          <RunUserProg>no</RunUserProg>
+          <UserProgName/>
+        </BeforeCompile>
+        <BeforeMake>
+          <RunUserProg>no</RunUserProg>
+          <UserProgName/>
+        </BeforeMake>
+        <AfterMake>
+          <RunUserProg>yes</RunUserProg>
+          <UserProgName>$(ProjectPath)/cdk_aft_build.sh;$(ProjectPath)/aft_build_project.sh</UserProgName>
+        </AfterMake>
+      </User>
+      <Compiler>
+        <Define>GCC_COMPILE=1;TLS_CONFIG_CPU_XT804=1</Define>
+        <Undefine/>
+        <Optim>Optimize more (-O2)</Optim>
+        <DebugLevel>Maximum (-g3)</DebugLevel>
+        <IncludePath>$(CDKPath)/CSKY/MinGW/csky-abiv2-elf-toolchain/csky-elfabiv2/include;$(ProjectPath);$(ProjectPath)/../Include;$(ProjectPath)/../Include/arch/xt804;$(ProjectPath)/../Include/arch/xt804/csi_core;$(ProjectPath)/../Include/arch/xt804/csi_dsp;$(ProjectPath)/../Include/driver;$(ProjectPath)/../Libraries/component/FreeRTOS/include;$(ProjectPath)/../Libraries/component/FreeRTOS/portable/xt804;$(ProjectPath)//inc</IncludePath>
+        <OtherFlags>-fdata-sections -c</OtherFlags>
+        <Verbose>no</Verbose>
+        <Ansi>no</Ansi>
+        <Syntax>no</Syntax>
+        <Pedantic>no</Pedantic>
+        <PedanticErr>no</PedanticErr>
+        <InhibitWarn>no</InhibitWarn>
+        <AllWarn>yes</AllWarn>
+        <WarnErr>no</WarnErr>
+        <OneElfS>yes</OneElfS>
+        <OneElfSPerData>no</OneElfSPerData>
+        <Fstrict>no</Fstrict>
+      </Compiler>
+      <Asm>
+        <Define/>
+        <Undefine/>
+        <IncludePath>$(CDKPath)/CSKY/csi/csi_core/csi_cdk/;$(CDKPath)/CSKY/csi/csi_core/include/;$(CDKPath)/CSKY/csi/csi_driver/include/;$(ProjectPath);$(ProjectPath)/../Include;$(ProjectPath)/../Include/arch/xt804;$(ProjectPath)/../Include/arch/xt804/csi_core;$(ProjectPath)/../Include/arch/xt804/csi_dsp;$(ProjectPath)/../Libraries/component/FreeRTOS/include</IncludePath>
+        <OtherFlags/>
+        <DebugLevel>gdwarf2</DebugLevel>
+      </Asm>
+      <Linker>
+        <Garbage>yes</Garbage>
+        <Garbage2>yes</Garbage2>
+        <LDFile>$(ProjectPath)/gcc_csky.ld</LDFile>
+        <LibName>dsp m</LibName>
+        <LibPath>$(ProjectPath)</LibPath>
+        <OtherFlags>-Wl,-zmax-page-size=1024 -mhard-float</OtherFlags>
+        <AutoLDFile>no</AutoLDFile>
+        <LinkType/>
+      </Linker>
+      <Debug>
+        <LoadApplicationAtStartup>yes</LoadApplicationAtStartup>
+        <Connector>ICE</Connector>
+        <StopAt>yes</StopAt>
+        <StopAtText>main</StopAtText>
+        <InitFile>$(ProjectPath)/gdb.init</InitFile>
+        <AfterLoadFile/>
+        <AutoRun>yes</AutoRun>
+        <ResetType>Soft Reset</ResetType>
+        <SoftResetVal>0</SoftResetVal>
+        <ResetAfterLoad>no</ResetAfterLoad>
+        <AfterResetFile/>
+        <Dumpcore>no</Dumpcore>
+        <DumpcoreText>$(ProjectPath)/$(ProjectName).cdkcore</DumpcoreText>
+        <ConfigICE>
+          <IP>localhost</IP>
+          <PORT>1025</PORT>
+          <CPUNumber>0</CPUNumber>
+          <Clock>12000</Clock>
+          <Delay>10</Delay>
+          <WaitReset>50</WaitReset>
+          <DDC>yes</DDC>
+          <TRST>no</TRST>
+          <DebugPrint>no</DebugPrint>
+          <Connect>Normal</Connect>
+          <ResetType>Soft Reset</ResetType>
+          <SoftResetVal>0</SoftResetVal>
+          <RTOSType>Bare Metal</RTOSType>
+          <DownloadToFlash>no</DownloadToFlash>
+          <ResetAfterConnect>yes</ResetAfterConnect>
+          <GDBName/>
+          <GDBServerType>Local</GDBServerType>
+          <OtherFlags/>
+        </ConfigICE>
+        <ConfigSIM>
+          <SIMTarget/>
+          <OtherFlags/>
+          <NoGraphic>yes</NoGraphic>
+          <Log>no</Log>
+          <SimTrace>no</SimTrace>
+        </ConfigSIM>
+        <ConfigOpenOCD>
+          <OpenOCDExecutablePath/>
+          <OpenOCDTelnetPortEnable>no</OpenOCDTelnetPortEnable>
+          <OpenOCDTelnetPort>4444</OpenOCDTelnetPort>
+          <OpenOCDTclPortEnable>no</OpenOCDTclPortEnable>
+          <OpenOCDTclPort>6666</OpenOCDTclPort>
+          <OpenOCDConfigOptions/>
+          <OpenOCDTimeout>5000</OpenOCDTimeout>
+        </ConfigOpenOCD>
+      </Debug>
+      <Flash>
+        <InitFile>$(ProjectPath)/flashinit</InitFile>
+        <Erase>Erase Full Chip</Erase>
+        <Algorithms Path="">W806_Flash_Tool.elf</Algorithms>
+        <Program>yes</Program>
+        <Verify>yes</Verify>
+        <ResetAndRun>no</ResetAndRun>
+        <ResetType>Soft Reset</ResetType>
+        <SoftResetVal/>
+        <External>no</External>
+        <Command/>
+        <Arguments/>
+      </Flash>
+    </BuildConfig>
+  </BuildConfigs>
+  <DebugSessions>
+    <watchExpressions/>
+    <memoryExpressions>;;;</memoryExpressions>
+    <statistics>;;32;;MHZ;</statistics>
+    <peripheralTabs/>
+    <WatchDisplayFormat>1</WatchDisplayFormat>
+    <LocalDisplayFormat>1</LocalDisplayFormat>
+    <debugLayout/>
+    <memoryTabColSizeExpressions>100:8;100:8;100:8;100:8;</memoryTabColSizeExpressions>
+  </DebugSessions>
+</Project>
